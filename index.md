@@ -2,7 +2,7 @@
 layout: default
 ---
 
-This module instructs students on the basics of deep learning as well as building better and faster deep network classifiers for sensor data. The module is strongly project-based, with two main phases. In the first phase, students will learn the basics of deep learning and Computer Vision, e.g. stochastic gradient descent, multi-layer perceptron, convolutional neural networks, filtering, and corner detection. At the end of this first phase, students should be ready to run simple networks in Keras and implement basic computer vision methods in Python. In the second phase, students will be divided into teams of 2 or 3. Each team will tackle a problem of their choosing, from fields such as computer vision, pattern recognition, distributed computing. Example projects include face recognition and emotion recognition.
+This module instructs students on the basics of deep learning as well as building better and faster deep network classifiers for sensor data. The module is strongly project-based, with two main phases. In the first phase, students will learn the basics of deep learning and Computer Vision, e.g. stochastic gradient descent, multi-layer perceptron, convolutional neural networks, filtering, and corner detection. At the end of this first phase, students should be ready to run simple networks in TensorFlow and implement basic computer vision methods in Python. In the second phase, students will be divided into teams of 2 or 3. Each team will tackle a problem of their choosing, from fields such as computer vision, pattern recognition, distributed computing. Example projects include face recognition and emotion recognition.
 
 + __Instructor__: PD. Dr. Shih-Chii Liu
 + __Language of Instruction__: English
@@ -20,10 +20,10 @@ This module instructs students on the basics of deep learning as well as buildin
 
 + __Session__: Thursdays 1-5pm
 + __Starting date__: February 28th, 2019
-+ __Place__: Institute of Neuroinformatics, Dungeon Lab, Y35 E 30, University Zurich Irchel Campus
++ __Place__: Institute of Neuroinformatics, Dungeon Lab, Y35 E 30, University Zürich Irchel Campus
 + __Module ends__: May 30th, 2019
 
-# [Session 01](./session_01.md)
+# [Session 01](./session_01.md): __TO EDIT__
 Basics of Linear Algebra (vector, matrix, tensors, etc), Introduction to Python, numpy basics, symbolic computation basics.
 
 # [Session 02](./session_02.md)
@@ -42,9 +42,9 @@ Advanced techniques of Computer Vision such as filtering, corner detection, keyp
 
 ## [Git Crash Course](./git-intro.md)
 
-## [Python for Scientific Computing](./python-sc.md)
+## [Python for Scientific Computing](./python-sc.md): __TO EDIT__
 
-## [Extra Deep Learning Resources](./dl-res.md)
+## [Extra Deep Learning Resources](./dl-res.md): __TO EDIT__
 
 # Projects
 
@@ -95,3 +95,7 @@ We would like to acknowledge the following resources:
 + [cs231n: Convolutional Neural Networks for Visual Recognition](http://cs231n.github.io/)
 + [RPI-Wireless-Hotspot](https://github.com/unixabg/RPI-Wireless-Hotspot)
 + [OpenCV Python Tutorials](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html)
+
+# Previous editions
+
++ [PnS2018](https://pns2018.github.io/): the first edition of the module focused on Deep Learning.

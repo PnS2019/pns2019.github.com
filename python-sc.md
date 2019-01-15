@@ -17,52 +17,65 @@ For this module, we can only offer limited help if you are using Windows.
 
 ## Which Python Distribution Should I Use?
 
-If you are a newbie to Python, you would go to the official Python website, download the installation file and install it on your computer. In fact, this may be the worst thing you can do.
+If you are a newbie to Python, you would go to the official Python website,
+download the installation file and install it on your computer.
+In fact, this may be the worst thing you can do.
 
-So, in most modern Linux and `*nix` operating systems, the Python distribution is installed for managing some system services by default. The system-installed Python can be used by the user for sure. However, because this distribution manages system services and needs constant writing privileges to some directories, we strongly recommend that you do not touch the system-installed Python as a new user. Moreover, you could encounter big problems when you are trying to install packages that build from scratch.
+So, in most modern Linux and `*nix` operating systems, the Python distribution
+is installed for managing some system services by default.
+The system-installed Python can be used by the user for sure.
+However, because this distribution manages system services and needs constant
+writing privileges to some directories, we strongly recommend that you do not
+touch the system-installed Python as a new user.
+Moreover, you could encounter big problems when you are trying to install packages that build from scratch.
 
-Instead, what we need is a Python distribution that has its own environment and can be easily removed when we want to. So the answer is [Anaconda](https://anaconda.org/), a Python distribution that is built for Scientific Computing.
+Instead, what we need is a Python distribution that has its own environment
+and can be easily removed when we want to.
+So the answer is [Miniconda](https://conda.io/miniconda.html),
+a Python distribution that is built for Scientific Computing.
 
-Anaconda delivers a custom Python distribution that includes over 1000 data science related packages, check [here](https://docs.anaconda.com/anaconda/packages/py2.7_linux-64). After installation, all the Anaconda files are in a folder. If you messed something up, simply remove that folder and install it again!
+### Miniconda setup instructions
 
-### Anaconda setup instructions
-
-1. Open a terminal and download Anaconda
+1. Open a terminal and download Miniconda
 
     ```bash
-    $ wget https://repo.continuum.io/archive/Anaconda2-5.1.0-Linux-x86_64.sh -O anaconda.sh  # for Linux
+    $ wget https://repo.anaconda.com/miniconda/Miniconda3-4.5.12-Linux-x86_64.sh -O miniconda.sh  # for Linux
     ```
 
     ```bash
-    $ curl https://repo.continuum.io/archive/Anaconda2-5.1.0-Linux-x86_64.sh -o anaconda.sh  # for macOS
+    $ curl https://repo.anaconda.com/miniconda/Miniconda3-4.5.12-MacOSX-x86_64.sh -o miniconda.sh  # for macOS
     ```
 
-2. Install Anaconda
+2. Install Miniconda
 
     ```bash
-    $ bash ./anaconda.sh
+    $ bash ./miniconda.sh
     ```
 
-    Follow the instructions and make sure Anaconda is added in your bash configuration file such as `.bashrc` or `.zshrc`.
+    Follow the instructions and make sure Miniconda is added in your bash configuration file such as `.bashrc` or `.zshrc`.
 
 3. Close the current terminal and open another one (so that the bash configuration is loaded again). Type `python`, you should see something similar to this:
 
     ```
-    Python 2.7.14 |Anaconda custom (64-bit)| (default, Nov  8 2017, 22:44:41)
-    [GCC 7.2.0] on linux2
+    Python 3.6.7 |Anaconda, Inc.| (default, Oct 23 2018, 19:16:44) 
+    [GCC 7.3.0] on linux
     Type "help", "copyright", "credits" or "license" for more information.
-    >>>
+    >>> 
     ```
 
-__Remark__: For Windows OS, please read the installation instruction [here](https://www.anaconda.com/download/#windows). Or, remove your Windows and install Linux.
+__Remark__: For Windows OS, please read the installation instruction [here](https://conda.io/docs/user-guide/install/windows.html). Or, remove your Windows and install Linux.
 
 ## Which Python Version Should I Use?
 
-Python 2.7
+Python 3.6
+
+__Remark__: Python 3.6 has gained full support from the scientific community. Python 2.7 was the default choice of the module. However, as Python 2's support will be ended soon, we choose Python 3.5/3.6 as the default Python version for this edition.
+
+__Remark__: Do not use Python 3.7 for now as many softwares haven't supported for this version yet.
 
 ## How to Install Other Python Packages?
 
-Generally, with Anaconda, we have three ways of installing other Python packages.
+Generally, with Miniconda, we have three ways of installing other Python packages.
 
 1. Use `pip`. `pip` is the official Python packaging system that manages package installation, uninstallation, version control, custom package building, etc. You can install additional Python packages by
 
@@ -72,7 +85,7 @@ Generally, with Anaconda, we have three ways of installing other Python packages
 
     If the package is available in [PyPi](https://pypi.org/), `pip` will automatically pull the software from the website and install it.
 
-2. Use `conda`. Anaconda uses the packaging system `conda` to manage packages and libraries installation. At heart, `conda` does package, dependency and environment management for any language. `conda` can pull and install a pre-built package from a specific server and resolve the dependency accordingly.
+2. Use `conda`. Miniconda uses the packaging system `conda` to manage packages and libraries installation. At heart, `conda` does package, dependency and environment management for any language. `conda` can pull and install a pre-built package from a specific server and resolve the dependency accordingly.
 
     ```bash
     $ conda install some-package-name
@@ -86,9 +99,11 @@ Generally, with Anaconda, we have three ways of installing other Python packages
 
 ## Do I Need Anything Else?
 
-For a beginner who wants to learn Python for data science, you generally don't need to install additional software packages. Anaconda has taken care of the software installation.
+Miniconda offers a minimum setup for Python. You will need to install some extra
+packages for running experiments in this module.
 
-However, you should familiarize yourself with the software packaging system on your computer. For Debian family (including Ubuntu), that is `apt-get` or `apt`. For macOS, that is either `MacPorts` or `homebrew`.
+You should familiarize yourself with the software packaging system on your computer.
+For Debian family (including Ubuntu), that is `apt-get` or `apt`. For macOS, that is either `MacPorts` or `homebrew`.
 
 ## IDE (Integrated Development Environment)
 
@@ -127,7 +142,7 @@ Therefore, we advice that you do not use Jupyter Notebook.
 
 ### Eclipse+PyDev
 
-If you are a [Eclipse](http://www.eclipse.org/) user, perhaps you would be very happy to know that there is a dedicate Eclipse plugin for Python. [PyDev](http://www.pydev.org/) takes advantages of the powerful Eclipse compiling and debugging framework.
+If you are a [Eclipse](http://www.eclipse.org/) user, perhaps you would be happy to know that there is a dedicate Eclipse plugin for Python. [PyDev](http://www.pydev.org/) takes advantages of the powerful Eclipse compiling and debugging framework.
 
 ### Vim
 

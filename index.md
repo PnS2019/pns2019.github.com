@@ -7,21 +7,21 @@ This module instructs students on the basics of deep learning as well as buildin
 + __Instructor__: PD. Dr. Shih-Chii Liu
 + __Language of Instruction__: English
 + __Prerequisites__ Basic programming (e.g. Python, C++), Basics in Linear Algebra
-+ __TA__: Yuhuang Hu, Jithendar Anumula, and Stefan Braun
++ __TA__: Yuhuang Hu, Iulia-Alexandra Lungu
 
 ---
 <div>
 <h2 align="center">
-    All materials are available at: <a href="https://github.com/PnS2018">https://github.com/PnS2018</a>
+    All materials are available at: <a href="https://github.com/PnS2019">https://github.com/PnS2019</a>
 </h2>
 </div>
 ---
 # Schedule
 
 + __Session__: Thursdays 1-5pm
-+ __Starting date__: March 1st, 2018
++ __Starting date__: February 28th, 2019
 + __Place__: Institute of Neuroinformatics, Dungeon Lab, Y35 E 30, University Zurich Irchel Campus
-+ __Module ends__: May 31th, 2018
++ __Module ends__: May 30th, 2019
 
 # [Session 01](./session_01.md)
 Basics of Linear Algebra (vector, matrix, tensors, etc), Introduction to Python, numpy basics, symbolic computation basics.
@@ -75,15 +75,15 @@ __Remark__: Difficulty scale: 1 (so easy) -- 10 (way too hard)
 
 ## Timeline
 
-+ Week 5 (March 29th): Project Briefing
++ Week 5 (March 28th): Project Briefing
 
-+ Week 6 (April 12th): Assign project based on the team's decision. Assign team name based on the team's decision. Setup project, first group discussion on the plan to complete the project.
++ Week 6 (April 11th): Assign project based on the team's decision. Assign team name based on the team's decision. Setup project, first group discussion on the plan to complete the project.
 
-+ Week 7-9 (April 19th - May 3rd): Collecting data, writing utility functions, first prototype by end of the 9th week
++ Week 7-9 (April 18th - May 2rd): Collecting data, writing utility functions, first prototype by end of the 9th week
 
-+ Week 10-11 (May 10th, May 17th): Refine the model and implementation so that the system can run as fast as possible
++ Week 10-11 (May 9th, May 16th): Refine the model and implementation so that the system can run as fast as possible
 
-+ Week 12-13 (May 24th, May 31st): Project write up and presentation
++ Week 12-13 (May 23th, May 30th): Project write up and presentation
 
 # Acknowledgment
 

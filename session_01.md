@@ -57,6 +57,19 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
     np.ones(shape=(2, 3, 4, 5))  # a 4D tensor that has 2x3x4x5 elements which are filled as 1
     ```
 
+### Matrix Arithmetic
+
++ Add between matrices
+
+    $$\mathbf{C}=\mathbf{A}+\mathbf{B}\quad\text{where }C_{i,j}=A_{i,j}+B_{i,j}$$
+
++ Add or multiply a scalar
+
+    $$\mathbf{D}=a\cdot\mathbf{B}+c\quad\text{where }D_{i,j}=a\cdot B_{i,j}+c$$
+
++ Matrix multiplication
+
+
 __Remarks__: We do not intend to present a full review of Linear Algebra. For those who need to quickly learn the material, please read [Chapter 2 of the Deep Learning Book](http://www.deeplearningbook.org/contents/linear_algebra.html) or [Linear Algebra Review and Reference](http://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf). Both resources give a very good presentation on the topic.
 
 ## Basic numpy

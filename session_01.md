@@ -59,7 +59,10 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
 __Remarks__: We do not intend to present a full review of Linear Algebra. For those who need to quickly learn the material, please read [Chapter 2 of the Deep Learning Book](http://www.deeplearningbook.org/contents/linear_algebra.html) or [Linear Algebra Review and Reference](http://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf). Both resources give a very good presentation on the topic.
 
-## Basic `numpy`
+## Basic numpy
+
+[![CoLab](https://img.shields.io/badge/Reproduced%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1Kn1f-4uVO7eGV0QzqXiJ7ekWUATI53OB)
+
 The contents of this section are mainly based on the [quickstart tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) of `numpy` from the official website.
 
 The main object in `numpy` is the homogeneous multi-dimensional array (or a tensor). The main difference between a Python multi-dimensional list and the `numpy` array is that elements of a list can be of different types, while the elements of a `numpy` array are of the same type.
@@ -67,6 +70,8 @@ The main object in `numpy` is the homogeneous multi-dimensional array (or a tens
 `numpy`'s array class is called the `ndarray`, which also goes by the alias `array`. A few important attributes of the `ndarray` object are `ndarray.shape` which has the dimensions of the array, `ndarray.dtype` which has the type of elements in the array (e.g., `numpy.int16`, `numpy.float16`, `numpy.float32`, etc).
 
 Let us look at an example.
+
+[![CoLab](https://img.shields.io/badge/Reproduced%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1WEjFGPntn8VoF3aALXrf_12vreVTcnJ6)
 
 ```python
 # this statement imports numpy with the alias np

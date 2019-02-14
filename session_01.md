@@ -121,8 +121,9 @@ np.linspace(0, 15, 30)  # 30 numbers from 0 to 15
 
 Now that the arrays are created, let us look at how the arrays can be operated on. The arithmetic operations on arrays are applied element wise.
 
-```python
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/19R9G5NaN8nqEKyKK_XMk-PG7zZyGmYM2)
 
+```python
 a = np.array([[1, 2], [3, 4]], dtype=np.float32)
 b = np.array([[1, 1], [2, 2]], dtype=np.float32)
 # subtracting one array from another element wise
@@ -149,7 +150,9 @@ np.exp(a - 2)
 # square root of the array element wise
 np.sqrt(a)
 ```
+
 Arrays of different types can be operated, the resulting array corresponds to the dtype of the more general or the more precise one.
+
 ```python
 a = np.array([[1, 2], [3, 4]], dtype=np.float64)
 b = np.array([[1, 1], [2, 2]], dtype=np.float32)

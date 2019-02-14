@@ -59,6 +59,8 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
 ### Matrix Arithmetic
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/13kqEOq6Jturill6baFlukshoeKgLgPXw)
+
 + Add between matrices
 
     $$\mathbf{C}=\mathbf{A}+\mathbf{B}\quad\text{where }\mathbf{C}_{i,j}=\mathbf{A}_{i,j}+\mathbf{B}_{i,j}$$

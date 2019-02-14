@@ -311,7 +311,6 @@ a[1:, :, 0]
 
 Iterating over multidimensional arrays is done with respect to the first axis.
 
-
 [![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1GGYhICvXW1oNH0swmTQHe6v1lowTyCF8)
 
 ```python
@@ -345,24 +344,32 @@ c = a.reshape(4, 1) + b
 c.shape
 ```
 
+__Remarks__: Some of you might realize that we use `numpy` to manipulate `array` instead of `matrix`. And in fact, there is a data structure in `numpy` that is dedicated to `matrix` manipulation. However, `matrix` is a derived type of `array` and less flexible. Therefore, in this module and practice, we always use `ndarray`.
+
 __Remarks__: For a more complete Python `numpy` Tutorial, please check [this document](http://cs231n.github.io/python-numpy-tutorial/) from Stanford CS231n class.
 
-### Basic Symbolic Computation
+## Basic Symbolic Computation
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1eJD3d2WiVjIusi63m8uCs-9Ti_88tcFm)
 
 While classical computing (numerical computing) defines variables and uses operations to modify their values, symbolic computation defines a graph of operations on symbols, which can be substituted for values later.
 These operations can include addition, subtraction, multiplication, matrix multiplication, differentiation, exponentiation, etc.
 
 Every operation takes as input symbols (tensors), and output symbols that can be further operated upon.
 
-While there are multiple open sourced symbolic computation libraries, like Tensorflow, Theano, etc, we will be using Keras, a high level API running on top of Tensorflow or Theano. We will be using the backend of Tensorflow in our sessions.
+In this module, we will use [TensorFlow](https://www.tensorflow.org/), a dedicated machine learning framework based on symbolic computation. Specifically, we use the official high-level APIs -- Keras.
 
-First let us import the backend functions of keras in python and implement some basic operations.
+__Remarks__: [Keras](https://keras.io/) is an open source project that was dedicated to provide clean yet efficient high-level APIs that unifies several different frameworks. Keras has become the official high-level abstraction layer of TensorFlow and has deeply fused into recent TensorFlow releases. Therefore, for this module, we choose to use the Keras in the TensorFlow to get better support in performance.
+
+__Remarks__: Almost all modern Deep Learning libraries follows the principle of symbolic computation including Theano, TensorFlow, PyTorch, MXNET, Chainer, etc.
+
+First let us import the backend functions of Keras in python and implement some basic operations.
 
 ```python
 import numpy as np
-from keras import backend as K
+from tensorflow.keras import backend as K
 ```
-Now initialize two input scalars (shape () tensors) which can then be added together. Placeholders are basic tensor variables which can later be substituted with numpy arrays during the evaluation of the further operations.
+Now initialize two input scalars (shape () tensors) which can then be added together. Placeholders are basic tensor variables which can later be substituted with `numpy` arrays during the evaluation of the further operations.
 ```python
 input_1 = K.placeholder(shape=())
 input_2 = K.placeholder(shape=())
@@ -406,7 +413,9 @@ add_function((np.array([[1, 3], [2, 4]]),
 
 The main advantage of using symbolic computation is automatic differentiation, which is crucial in deep learning.
 
-For this, we need to get acquainted with keras variables. While keras placeholders are a way to instantiate tensors, they are placeholder tensors for users to substitute values into to carry out their intended computation. To be able to use the automatic differentiation in keras, we need to define variables, with respect to which we can differentiate other symbols.
+For this, we need to get acquainted with `keras` variables. While `keras` placeholders are a way to instantiate tensors, they are placeholder tensors for users to substitute values into to carry out their intended computation. To be able to use the automatic differentiation in `keras`, we need to define variables, with respect to which we can differentiate other symbols.
+
+TODO: fix variable's behavior according to TensorFlow
 
 ```python
 # variable can be initialized with a value like this
@@ -456,7 +465,6 @@ K.eval(add_tensor)
 We can also compute more than one thing at the same time by using multiple outputs. Say we want to add two tensors, subtract two tensors, perform an element-wise squaring operation on one of the tensors and get the element-wise exponential of the other tensor.
 
 ```python
-
 variable_1 = K.ones(shape=(2, 2))
 variable_2 = K.ones(shape=(2, 2))
 

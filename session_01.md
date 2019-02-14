@@ -210,11 +210,16 @@ a.cumsum(axis=-1)
 
 While 1D arrays can be indexed just like python native lists, multi-dimensional arrays can have one index per axis. These indices are in an n-length tuple for an n-dimensional array.
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1EI8RjvDN87a8k896wK8MVcWpCJMuXcTJ)
+
 ```python
 a = np.arange(12)
 
 a[2:5]  # indexes the 2nd element to the 4th element
 # notice that the last element is the 4th element and not the 5th
+
+# From the fifth element, indexing every two elements
+a[4::2]
 
 a = a.reshape(3, 2, 2)
 
@@ -224,7 +229,12 @@ a[:, 1, :]  # a simple colon represents all the elements in that dimension
 # :-1 indexes the 0th element to the last but one element
 a[1:, :, 0]
 ```
+
 Iterating over multidimensional arrays is done with respect to the first axis.
+
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1GGYhICvXW1oNH0swmTQHe6v1lowTyCF8)
+
 ```python
 a = np.arange(12).reshape(3, 2, 2)
 
@@ -234,13 +244,17 @@ for element in a:
 for element in np.transpose(a, axes=[1, 0, 2]):
   print(element)
 ```
-Numpy broadcasts arrays of different shapes during arithmetic operations. Broadcasting allows functions to deal with inputs that do not have the same shape but expects inputs that have the same shape.
+
+`numpy` broadcasts arrays of different shapes during arithmetic operations. Broadcasting allows functions to deal with inputs that do not have the same shape but expects inputs that have the same shape.
 
 The first rule of broadcasting is that if all the input arrays do not have the same dimensions, a '1' will be **prepended** to the shapes of the smaller arrays until all the arrays have the same number of dimensions.
 
 The second rule ensures that arrays with size '1' along a particular dimension acts as if they had size of the largest array in that dimension, with the value repeated in that dimension.
 
-After these two rules, the arrays must be of same shape, otherwise the arrays are not broadcastable. Further details can be found [here](https://docs.scipy.org/doc/numpy-dev/user/basics.broadcasting.html).
+After these two rules, the arrays must be of same shape, otherwise the arrays are not broadcastable. Further details can be found [here](https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html).
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1wXg_2NK4ErPzsOykHtjXjmgNfb3vEeAa)
+
 ```python
 a = np.arange(4)
 b = np.arange(5)

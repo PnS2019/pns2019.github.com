@@ -10,12 +10,11 @@ In this session, we will revisit the basic concepts of Linear Algebra. Then, we 
 
 This section will only provide a brief introduction to Linear Algebra. For those of you who are unfamiliar with the concepts of Linear Algebra, it is strongly recommended that you spend some time with a text book or a complete course on Linear Algebra. A strongly recommended text book is [Introduction to Linear Algebra](math.mit.edu/~gs/linearalgebra/) by Gilbert Strang.
 
-For this module, we also recommend [Chapter 2: Linear Algebra](http://www.deeplearningbook.org/contents/linear_algebra.html) from the _Deep Learning_ book to
-quickly understand the core concepts.
-
 __Remarks__: In this module, we do not emphasize the geometry aspects of the Linear Algebra. Instead, we use the relevant concepts in the view of programing and computation.
 
 ### Scalar, Vector, Matrix and Tensor
+
+__The code in this section can be reproduced at __ [![CoLab](https://img.shields.io/badge/Reproduced%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1Kn1f-4uVO7eGV0QzqXiJ7ekWUATI53OB)
 
 + A __Scalar__ is just a single number.
 
@@ -54,18 +53,18 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
 + A multi-dimensional array is called a __tensor__. Note that scalars are 0-dimensional tensors, vectors are 1-dimensional tensors and matrices are 2-dimensional tensors.
 
-```python
-np.ones(shape=(2, 3, 4, 5))  # a 4D tensor that has 2x3x4x5 elements which are filled as 1
-```
+    ```python
+    np.ones(shape=(2, 3, 4, 5))  # a 4D tensor that has 2x3x4x5 elements which are filled as 1
+    ```
 
 __Remarks__: We do not intend to present a full review of Linear Algebra. For those who need to quickly learn the material, please read [Chapter 2 of the Deep Learning Book](http://www.deeplearningbook.org/contents/linear_algebra.html) or [Linear Algebra Review and Reference](http://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf). Both resources give a very good presentation on the topic.
 
-## Basic Numpy
-The contents of this section are mainly based on the [quickstart tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html) of Numpy from the official website.
+## Basic `numpy`
+The contents of this section are mainly based on the [quickstart tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) of `numpy` from the official website.
 
-The main object in Numpy is the homogeneous multi-dimensional array (or a tensor). The main difference between a Python multi-dimensional list and the numpy array is that elements of a list can be of different types, while the elements of a numpy array are of the same type.
+The main object in `numpy` is the homogeneous multi-dimensional array (or a tensor). The main difference between a Python multi-dimensional list and the `numpy` array is that elements of a list can be of different types, while the elements of a `numpy` array are of the same type.
 
-Numpy's array class is called the `ndarray`, which also goes by the alias `array`. A few important attributes of the ndarray object are `ndarray.shape` which has the dimensions of the array, `ndarray.dtype` which has the type of elements in the array (e.g., numpy.int16, numpy.float16, numpy.float32, etc).
+`numpy`'s array class is called the `ndarray`, which also goes by the alias `array`. A few important attributes of the `ndarray` object are `ndarray.shape` which has the dimensions of the array, `ndarray.dtype` which has the type of elements in the array (e.g., `numpy.int16`, `numpy.float16`, `numpy.float32`, etc).
 
 Let us look at an example.
 

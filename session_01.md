@@ -434,10 +434,10 @@ __Remarks__: The complete API reference is available at [Keras documentation for
 
 ### Exercises
 
-1. Create three symbolic placeholder vectors of length 5 (shape (5,) tensors) $$\mathbf{a}$$, $$\mathbf{b}$$ and $$\mathbf{c}$$; then create a function to compute the expression $$\mathbf{a}^2 + \mathbf{b}^2 + \mathbf{c}^2 + 2\mathbf{b}\mathbf{c}$$.
+1. Create three symbolic placeholder vectors of length 5 (shape `(5,)` tensors) $$\mathbf{a}$$, $$\mathbf{b}$$ and $$\mathbf{c}$$; then create a function to compute the expression $$\mathbf{a}^2 + \mathbf{b}^2 + \mathbf{c}^2 + 2\mathbf{b}\mathbf{c}$$. (Element-wise multiplication)
 
-1. Create a scalar variable $$\mathbf{x}$$ and compute the tanh function on $$\mathbf{x}$$ using the exponential function. Then compute the derivative of the tanh with respect to $$\mathbf{x}$$ using the gradients function. Invoke the functions with the values -100, -1, 0, 1 and 100 to analyze the function and its derivative.
+1. Create a scalar variable $$x$$ and compute the $$\tanh$$ function on $$x$$ using the exponential function. Then compute the derivative of the $$\tanh$$ with respect to $$x$$ using the gradients function. Invoke the functions with the values -100, -1, 0, 1 and 100 to analyze the function and its derivative.
 
-1. Create shape (2,) variable $$\mathbf{w}$$ and the shape (1,) variable $$\mathbf{b}$$. Create shape (2,) placeholder $$\mathbf{x}$$. Now create the function corresponding to $$f(w_1 * x_1 + w_2 * x_2 + b)$$ where $$f(x) = \frac{1}{1+e^{-x}}$$ and compute the gradient with respect to $$\mathbf{w}$$. Analyse the implemented operation. Then see how the function and the gradient behave for different values of the variables and the placeholder.
+1. Create shape (2,) variable $$\mathbf{w}$$ and the shape (1,) variable $$\mathbf{b}$$. Create shape (2,) placeholder $$\mathbf{x}$$. Now create the function corresponding to $$z=f(w_0 * x_0 + w_1 * x_1 + b_0)$$ where $$f(z) = \frac{1}{1+e^{-z}}$$ and compute the gradient with respect to $$\mathbf{w}$$. Analyse the implemented operation. Then see how the function and the gradient behave for different values of the variables and the placeholder.
 
 1. For an arbitrary $$n$$, create an $$n$$-degree polynomial for an input scalar variable $$\mathbf{x}$$ with $$(n+1)$$ variables and compute the gradients of the polynomial with respect to each of the variables.

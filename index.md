@@ -44,6 +44,8 @@ Advanced techniques of Computer Vision such as filtering, corner detection, keyp
 
 ## [Python for Scientific Computing](./python-sc.md): __TO EDIT__
 
+## [Introduction to Colaboratory](./colab-intro.md): __TO EDIT__
+
 ## [Extra Deep Learning Resources](./dl-res.md): __TO EDIT__
 
 # Projects
@@ -54,7 +56,7 @@ Advanced techniques of Computer Vision such as filtering, corner detection, keyp
 
 + __Baby Jarvis III__: Proof-of-concept driver monitoring system by detecting if the user is sleeping, checking the phone or doing other reckless activities while driving. (Difficulty: 6)
 
-+ __Where’s Waldo?__: Find Waldo in the original picture given a query using OpenCV. (Difficulty: 6)
+<!-- + __Where’s Waldo?__: Find Waldo in the original picture given a query using OpenCV. (Difficulty: 6) -->
 
 + __Are You Human?__: Break a CAPTCHA that uses simple math as the question. (Difficulty: 6)
 

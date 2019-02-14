@@ -2,29 +2,34 @@
 layout: default
 ---
 
-Welcome to the first session of the module ['Deep Learning on Raspberry Pi'](../README.md).
+Welcome to the first session of the module --- _Deep Learning on Raspberry Pi_.
 
-In this session, we will revisit the basic concepts of linear algebra. Then, we will familiarize ourselves with Numpy, a Python package used for scientific computing and some basics of symbolic computation. At the end of this session, there will be a few exercises which will further help the understanding of the concepts introduced here.
+In this session, we will revisit the basic concepts of Linear Algebra. Then, we will familiarize ourselves with `numpy`, a Python package used for scientific computing and some basics of symbolic computation. At the end of this session, there will be a few exercises which will further help the understanding of the concepts introduced here.
 
 ## Linear Algebra
 
-This section will only provide a brief introduction to linear algebra. For those of you who are unfamiliar with the concepts of linear algebra, it is strongly recommended that you spend some time with a text book or a complete course on linear algebra. A strongly recommended text book is [Introduction to Linear Algebra](math.mit.edu/~gs/linearalgebra/) by Gilbert Strang.
+This section will only provide a brief introduction to Linear Algebra. For those of you who are unfamiliar with the concepts of Linear Algebra, it is strongly recommended that you spend some time with a text book or a complete course on Linear Algebra. A strongly recommended text book is [Introduction to Linear Algebra](math.mit.edu/~gs/linearalgebra/) by Gilbert Strang.
+
+For this module, we also recommend [Chapter 2: Linear Algebra](http://www.deeplearningbook.org/contents/linear_algebra.html) from the _Deep Learning_ book to
+quickly understand the core concepts.
+
+__Remarks__: In this module, we do not emphasize the geometry aspects of the Linear Algebra. Instead, we use the relevant concepts in the view of programing and computation.
 
 ### Scalar, Vector, Matrix and Tensor
 
 + A __Scalar__ is just a single number.
 
-+ A __Vector__ is an array of numbers. A vector is an element of the inner product space $$ \mathbb{R}^n $$. For example a vector $$\mathbf{x}$$ that has $$ n $$ elements is represented as:
++ A __Vector__ is an array of numbers. These numbers are arranged in order. For example a vector $$\mathbf{x}$$ that has $$ n $$ elements is represented as:
 
 $$\mathbf{x}=\left[\begin{matrix}x_{1}\\ x_{2}\\ x_{3}\\ \vdots\\ x_{n}\end{matrix}\right]$$
 
-A numpy example of a 6-element vector is given as follows:
+    A `numpy` example of a 6-element vector is given as follows:
 
-```python
-np.array([1, 2, 3, 4, 5, 6])  # a row vector that has 6 elements
-```
+    ```python
+    np.array([1, 2, 3, 4, 5, 6])  # a row vector that has 6 elements
+    ```
 
-__Technical Note__: by default, numpy can only represent row vector as numpy needs two dimensions to represent a column vector.
+    __Remarks__: by default, `numpy` can only represent row vector because `numpy` needs two dimensions to represent a column vector.
 
 + A __Matrix__ is a 2D array of numbers. Matrices are mainly used as linear operators to transform a vector space $$\mathbb{R}^m $$ to $$\mathbb{R}^n $$, which would be an $$ n\times m $$ matrix represented as:
 
@@ -33,7 +38,7 @@ A_{21} & A_{22} & \cdots & A_{2m} \\
 \vdots & \vdots & \ddots & \vdots \\
 A_{n1} & A_{n2} & \cdots & A_{nm}\end{matrix}\right]$$
 
-A numpy example:
+A `numpy` example:
 
 ```python
 np.array([[1, 2, 3, 4],
@@ -227,7 +232,7 @@ c = a.reshape(4, 1) + b
 c.shape
 ```
 
-__Remarks__: For a more complete Python Numpy Tutorial, please check [this document](http://cs231n.github.io/python-numpy-tutorial/) from Stanford CS231n class.
+__Remarks__: For a more complete Python `numpy` Tutorial, please check [this document](http://cs231n.github.io/python-numpy-tutorial/) from Stanford CS231n class.
 
 ### Basic Symbolic Computation
 

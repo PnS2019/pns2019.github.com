@@ -14,7 +14,7 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
 ### Scalar, Vector, Matrix and Tensor
 
-__The code in this section can be reproduced at __ [![CoLab](https://img.shields.io/badge/Reproduced%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1Kn1f-4uVO7eGV0QzqXiJ7ekWUATI53OB)
+[![CoLab](https://img.shields.io/badge/Reproduced%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1Kn1f-4uVO7eGV0QzqXiJ7ekWUATI53OB)
 
 + A __Scalar__ is just a single number.
 

@@ -75,7 +75,7 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
     $$C_{i,j}=\sum_{k=1}^{n}A_{i,k}B_{k,j}$$
 
-    Note that matrix multiplication is order dependent, which means $$\mathbf{A}\mathbf{B}\neq\mathbf{B}\mathbf{A}$$. There are many useful properties. For example, matrix multiplication is both distributive and associative:
+    Note that matrix multiplication is order dependent, which means $$\mathbf{A}\mathbf{B}\neq\mathbf{B}\mathbf{A}$$ (not always). There are many useful properties. For example, matrix multiplication is both distributive and associative:
 
     $$\mathbf{A}(\mathbf{B}+\mathbf{C})=\mathbf{A}\mathbf{B}+\mathbf{A}\mathbf{C}$$
 
@@ -83,8 +83,34 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
     The transpose of a matrix product is:
 
-    $$(\mathbf{A}\mathbf{B})^{\top}=\mathbf{B}^{\top}\mathbf{A}^{\top}
+    $$(\mathbf{A}\mathbf{B})^{\top}=\mathbf{B}^{\top}\mathbf{A}^{\top}$$
 
+
+### Identity and Inverse Matrix
+
+The __identity matrix__ $$\mathbf{I}\in\mathbb{R}^{n\times n}$$ is a special square matrix where all the entries along the diagonal are 1, while all other entries are zero:
+
+$$\mathbf{I}_{i,i} = 1, \mathbf{I}{i,j_{i\neq j}}=0$$
+
+The identity matrix has a nice properties that it does not change the matrix when we multiply that matrix by identity matrix:
+
+$$\mathbf{I}\mathbf{A}=\mathbf{A}$$
+
+The __matrix inverse__ of $$\mathbf{A}$$ is denoted as $$\mathbf{A}^{-1}$$,
+and it is defined as the matrix such that:
+
+$$\mathbf{A}\mathbf{A}^{-1}=\mathbf{I}$$
+
+__Remarks__: Not all matrices have a corresponding inverse matrix.
+
+
+### Norms
+
+We use the concept of __norm__ to measure the size of a vector. Formally an $$L^{p}$$ norm of a vector $$\mathbf{x}$$ is given by:
+
+$$||\mathbf{x}||_{p}=\left(\sum_{i}|x_{i}|^{p}\right)^{\frac{1}{p}}$$
+
+for $$p\in\mathbb{R}$$, $$p\geq 1$$.
 
 __Remarks__: We do not intend to present a full review of Linear Algebra. For those who need to quickly learn the material, please read [Chapter 2 of the Deep Learning Book](http://www.deeplearningbook.org/contents/linear_algebra.html) or [Linear Algebra Review and Reference](http://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf). Both resources give a very good presentation on the topic.
 
@@ -467,6 +493,6 @@ __Remarks__: The complete API reference is available at [Keras documentation for
 
 1. Create a scalar variable $$x$$ and compute the $$\tanh$$ function on $$x$$ using the exponential function. Then compute the derivative of the $$\tanh$$ with respect to $$x$$ using the gradients function. Invoke the functions with the values -100, -1, 0, 1 and 100 to analyze the function and its derivative.
 
-1. Create shape (2,) variable $$\mathbf{w}$$ and the shape (1,) variable $$\mathbf{b}$$. Create shape (2,) placeholder $$\mathbf{x}$$. Now create the function corresponding to $$z=f(w_0 * x_0 + w_1 * x_1 + b_0)$$ where $$f(z) = \frac{1}{1+e^{-z}}$$ and compute the gradient with respect to $$\mathbf{w}$$. Analyse the implemented operation. Then see how the function and the gradient behave for different values of the variables and the placeholder.
+1. Create shape `(2,)` variable $$\mathbf{w}$$ and the shape `(1,)` variable $$\mathbf{b}$$. Create shape `(2,)` placeholder $$\mathbf{x}$$. Now create the function corresponding to $$z=f(w_0 * x_0 + w_1 * x_1 + b_0)$$ where $$f(z) = \frac{1}{1+e^{-z}}$$ and compute the gradient with respect to $$\mathbf{w}$$. Analyse the implemented operation. Then see how the function and the gradient behave for different values of the variables and the placeholder.
 
 1. For an arbitrary $$n$$, create an $$n$$-degree polynomial for an input scalar variable $$\mathbf{x}$$ with $$(n+1)$$ variables and compute the gradients of the polynomial with respect to each of the variables.

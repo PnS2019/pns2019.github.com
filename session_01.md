@@ -21,7 +21,7 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
 + A __Vector__ is an array of numbers. These numbers are arranged in order. For example a vector $$\mathbf{x}$$ that has $$ n $$ elements is represented as:
 
-$$\mathbf{x}=\left[\begin{matrix}x_{1}\\ x_{2}\\ x_{3}\\ \vdots\\ x_{n}\end{matrix}\right]$$
+    $$\mathbf{x}=\left[\begin{matrix}x_{1}\\ x_{2}\\ x_{3}\\ \vdots\\ x_{n}\end{matrix}\right]$$
 
     A `numpy` example of a 6-element vector is given as follows:
 
@@ -33,24 +33,24 @@ $$\mathbf{x}=\left[\begin{matrix}x_{1}\\ x_{2}\\ x_{3}\\ \vdots\\ x_{n}\end{matr
 
 + A __Matrix__ is a 2D array of numbers. Matrices are mainly used as linear operators to transform a vector space $$\mathbb{R}^m $$ to $$\mathbb{R}^n $$, which would be an $$ n\times m $$ matrix represented as:
 
-$$\mathbf{A}=\left[\begin{matrix}A_{11} & A_{12} & \cdots & A_{1m} \\
-A_{21} & A_{22} & \cdots & A_{2m} \\
-\vdots & \vdots & \ddots & \vdots \\
-A_{n1} & A_{n2} & \cdots & A_{nm}\end{matrix}\right]$$
+    $$\mathbf{A}=\left[\begin{matrix}A_{11} & A_{12} & \cdots & A_{1m} \\
+    A_{21} & A_{22} & \cdots & A_{2m} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    A_{n1} & A_{n2} & \cdots & A_{nm}\end{matrix}\right]$$
 
-A `numpy` example:
+    A `numpy` example:
 
-```python
-np.array([[1, 2, 3, 4],
-          [5, 6, 7, 8],
-          [9, 10, 11, 12]])  # a 3x4 matrix
-```
+    ```python
+    np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])  # a 3x4 matrix
+    ```
 
-The __matrix transpose__ is defined as $$\mathbf{A}^{\top}$$ where $$(\mathbf{A}^{\top}_{i,j})=\mathbf{A}_{j,i}$$. The transpose of the matrix can be thought of as a mirror image across the main diagonal. Python has a nice API for the matrix:
+    The __matrix transpose__ is defined as $$\mathbf{A}^{\top}$$ where $$(\mathbf{A}^{\top}_{i,j})=\mathbf{A}_{j,i}$$. The transpose of the matrix can be thought of as a mirror image across the main diagonal. Python has a nice API for the matrix:
 
-```python
-A_transpose = A.T
-```
+    ```python
+    A_transpose = A.T
+    ```
 
 + A multi-dimensional array is called a __tensor__. Note that scalars are 0-dimensional tensors, vectors are 1-dimensional tensors and matrices are 2-dimensional tensors.
 

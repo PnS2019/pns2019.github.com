@@ -122,6 +122,18 @@ L^{\infty}:& \|\mathbf{x}\|_{\infty} = \max_{i}|\mathbf{x}_{i}|
 \end{aligned}
 $$
 
+### Trace Operator
+
+The __trace operator__ gives the sum of all the diagonal entries of a matrix:
+
+$$\text{Tr}(\mathbf{A})=\sum_{i}\mathbf{A}_{i,i})$$
+
+There are many useful yet not obvious properties given by the trace operator. For example, for $$\mathbf{A}\in\mathbb{R}^{m\times n}$$ and $$\mathbf{B}\in\mathbb{R}^{n\times m}$$, we have:
+
+$$\text{Tr}(\mathbf{A}\mathbf{B})=\text{Tr}(\mathbf{B}\mathbf{A})$$
+
+even though $$\mathbf{A}\mathbf{B}\in\mathbb{R}^{m\times m}$$ and $$\mathbf{B}\mathbf{A}\in\mathbb{R}^{n\times n}$$.
+
 __Remarks__: We do not intend to present a full review of Linear Algebra. For those who need to quickly learn the material, please read [Chapter 2 of the Deep Learning Book](http://www.deeplearningbook.org/contents/linear_algebra.html) or [Linear Algebra Review and Reference](http://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf). Both resources give a very good presentation on the topic.
 
 ## Basic numpy

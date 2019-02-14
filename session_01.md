@@ -90,7 +90,7 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
 The __identity matrix__ $$\mathbf{I}\in\mathbb{R}^{n\times n}$$ is a special square matrix where all the entries along the diagonal are 1, while all other entries are zero:
 
-$$\mathbf{I}_{i,i} = 1, \mathbf{I}{i,j_{i\neq j}}=0$$
+$$\mathbf{I}_{i,i} = 1, \mathbf{I}_{i,j_{i\neq j}}=0$$
 
 The identity matrix has a nice properties that it does not change the matrix when we multiply that matrix by identity matrix:
 
@@ -118,7 +118,7 @@ $$
 \begin{aligned}
 L^{1}:& \|\mathbf{x}\|_{1}=\sum_{i}|\mathbf{x}_{i}| \\
 L^{2}:& \|\mathbf{x}\|_{2}=\sqrt{\sum_{i}\mathbf{x}_{i}^{2}} \\
-L^{\infty}:& \|\mathbf{x}\|_{\infty} = max_{i}|\mathbf{x}_{i}|
+L^{\infty}:& \|\mathbf{x}\|_{\infty} = \max_{i}|\mathbf{x}_{i}|
 \end{aligned}
 $$
 

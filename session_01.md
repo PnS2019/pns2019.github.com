@@ -61,11 +61,11 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
 + Add between matrices
 
-    $$\mathbf{C}=\mathbf{A}+\mathbf{B}\quad\text{where }C_{i,j}=A_{i,j}+B_{i,j}$$
+    $$\mathbf{C}=\mathbf{A}+\mathbf{B}\quad\text{where }\mathbf{C}_{i,j}=\mathbf{A}_{i,j}+\mathbf{B}_{i,j}$$
 
 + Add or multiply a scalar
 
-    $$\mathbf{D}=a\cdot\mathbf{B}+c\quad\text{where }D_{i,j}=a\cdot B_{i,j}+c$$
+    $$\mathbf{D}=a\cdot\mathbf{B}+c\quad\text{where }\mathbf{D}_{i,j}=a\cdot \mathbf{B}_{i,j}+c$$
 
 + Matrix multiplication, the product of two matrices $$\mathbf{A}\in\mathbb{R}^{m\times n}$$ and $$\mathbf{B}\in\mathbb{R}^{n\times p}$$ is the matrix $$\mathbf{C}$$:
 
@@ -73,7 +73,7 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
     where
 
-    $$C_{i,j}=\sum_{k=1}^{n}A_{i,k}B_{k,j}$$
+    $$\mathbf{C}_{i,j}=\sum_{k=1}^{n}\mathbf{A}_{i,k}\mathbf{B}_{k,j}$$
 
     Note that matrix multiplication is order dependent, which means $$\mathbf{A}\mathbf{B}\neq\mathbf{B}\mathbf{A}$$ (not always). There are many useful properties. For example, matrix multiplication is both distributive and associative:
 
@@ -111,6 +111,16 @@ We use the concept of __norm__ to measure the size of a vector. Formally an $$L^
 $$||\mathbf{x}||_{p}=\left(\sum_{i}|x_{i}|^{p}\right)^{\frac{1}{p}}$$
 
 for $$p\in\mathbb{R}$$, $$p\geq 1$$.
+
+The most common norms are $$L^{1}$$, $$L^{2}$$ and $$L^{\infty}$$ norms:
+
+$$
+\begin{aligned}
+L^{1}:& \|\mathbf{x}\|_{1}=\sum_{i}|\mathbf{x}_{i}| \\
+L^{2}:& \|\mathbf{x}\|_{2}=\sqrt{\sum_{i}\mathbf{x}_{i}^{2}} \\
+L^{\infty}:& \|\mathbf{x}\|_{\infty} = max_{i}|\mathbf{x}_{i}|
+\end{aligned}
+$$
 
 __Remarks__: We do not intend to present a full review of Linear Algebra. For those who need to quickly learn the material, please read [Chapter 2 of the Deep Learning Book](http://www.deeplearningbook.org/contents/linear_algebra.html) or [Linear Algebra Review and Reference](http://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf). Both resources give a very good presentation on the topic.
 

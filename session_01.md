@@ -67,7 +67,23 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
     $$\mathbf{D}=a\cdot\mathbf{B}+c\quad\text{where }D_{i,j}=a\cdot B_{i,j}+c$$
 
-+ Matrix multiplication
++ Matrix multiplication, the product of two matrices $$\mathbf{A}\in\mathbb{R}^{m\times n}$$ and $$\mathbf{B}\in\mathbb{R}^{n\times p}$$ is the matrix $$\mathbf{C}$$:
+
+    $$\mathbf{C}=\mathbf{A}\mathbf{B}$$
+
+    where
+
+    $$C_{i,j}=\sum_{k=1}^{n}A_{i,k}B_{k,j}$$
+
+    Note that matrix multiplication is order dependent, which means $$\mathbf{A}\mathbf{B}\neq\mathbf{B}\mathbf{A}$$. There are many useful properties. For example, matrix multiplication is both distributive and associative:
+
+    $$\mathbf{A}(\mathbf{B}+\mathbf{C})=\mathbf{A}\mathbf{B}+\mathbf{A}\mathbf{C}$$
+
+    $$\mathbf{A}(\mathbf{B}\mathbf{C})=(\mathbf{A}\mathbf{B})\mathbf{C}$$
+
+    The transpose of a matrix product is:
+
+    $$(\mathbf{A}\mathbf{B})^{\top}=\mathbf{B}^{\top}\mathbf{A}^{\top}
 
 
 __Remarks__: We do not intend to present a full review of Linear Algebra. For those who need to quickly learn the material, please read [Chapter 2 of the Deep Learning Book](http://www.deeplearningbook.org/contents/linear_algebra.html) or [Linear Algebra Review and Reference](http://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf). Both resources give a very good presentation on the topic.

@@ -14,7 +14,7 @@ __Remarks__: In this module, we do not emphasize the geometry aspects of the Lin
 
 ### Scalar, Vector, Matrix and Tensor
 
-[![CoLab](https://img.shields.io/badge/Reproduced%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1Kn1f-4uVO7eGV0QzqXiJ7ekWUATI53OB)
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1Kn1f-4uVO7eGV0QzqXiJ7ekWUATI53OB)
 
 + A __Scalar__ is just a single number.
 
@@ -61,8 +61,6 @@ __Remarks__: We do not intend to present a full review of Linear Algebra. For th
 
 ## Basic numpy
 
-[![CoLab](https://img.shields.io/badge/Reproduced%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1Kn1f-4uVO7eGV0QzqXiJ7ekWUATI53OB)
-
 The contents of this section are mainly based on the [quickstart tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) of `numpy` from the official website.
 
 The main object in `numpy` is the homogeneous multi-dimensional array (or a tensor). The main difference between a Python multi-dimensional list and the `numpy` array is that elements of a list can be of different types, while the elements of a `numpy` array are of the same type.
@@ -71,7 +69,7 @@ The main object in `numpy` is the homogeneous multi-dimensional array (or a tens
 
 Let us look at an example.
 
-[![CoLab](https://img.shields.io/badge/Reproduced%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1WEjFGPntn8VoF3aALXrf_12vreVTcnJ6)
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1WEjFGPntn8VoF3aALXrf_12vreVTcnJ6)
 
 ```python
 # this statement imports numpy with the alias np
@@ -102,7 +100,9 @@ a = a.astype(np.int8)
 a.dtype
 ```
 
-To operate on numpy arrays, they have to be created. Numpy arrays can be created in many ways.
+To operate on `numpy` arrays, they have to be created. `numpy` arrays can be created in many ways.
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1fwb030gz4IJTpPK6tnsP_N_5jhF5J_r8)
 
 ```python
 # initialize from a list with the dtype float32, the dtype unless specified is int64 since

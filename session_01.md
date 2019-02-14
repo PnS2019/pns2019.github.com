@@ -153,6 +153,9 @@ np.sqrt(a)
 
 Arrays of different types can be operated, the resulting array corresponds to the dtype of the more general or the more precise one.
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1KRQMZOqYiMSoGk_Gj1F7eANCwK8YqaX6)
+
+
 ```python
 a = np.array([[1, 2], [3, 4]], dtype=np.float64)
 b = np.array([[1, 1], [2, 2]], dtype=np.float32)
@@ -168,7 +171,11 @@ c = a + b
 # should be of type float 64
 c.dtype
 ```
-Numpy also provides inplace operations to modify existing arrays.
+
+`numpy` also provides inplace operations to modify existing arrays.
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1jr3tw19Dr8v7CjmrmbXGzqiTQr_Rfo7F)
+
 ```python
 a = np.array([[1, 2], [3, 4]], dtype=np.float32)
 b = np.array([[1, 1], [2, 2]], dtype=np.int32)
@@ -179,9 +186,13 @@ a += b
 # note that when trying to add a to b you get an error
 b += a
 ```
+
 There are many inbuilt unary operations as well, the names are self explanatory.
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1O5aGVEP4oMQHyoWI-zwQfZUALJTRgWOa)
+
 ```python
-a = np.array([[1, 2], [3, 4]])
+a = np.array([[1, 2, 3], [4, 5, 6]])
 
 # sum of all elements in the array
 a.sum()
@@ -196,7 +207,9 @@ a.min()
 # computes the cumulative sum along the last axis
 a.cumsum(axis=-1)  
 ```
+
 While 1D arrays can be indexed just like python native lists, multi-dimensional arrays can have one index per axis. These indices are in an n-length tuple for an n-dimensional array.
+
 ```python
 a = np.arange(12)
 

@@ -42,11 +42,11 @@ Advanced techniques of Computer Vision such as filtering, corner detection, keyp
 
 ## [Git Crash Course](./git-intro.md)
 
-## [Python for Scientific Computing](./python-sc.md): __TO EDIT__
+## [Python for Scientific Computing](./python-sc.md)
 
-## [Introduction to Colaboratory](./colab-intro.md): __TO EDIT__
+## [Introduction to Colaboratory](./colab-intro.md)
 
-## [Extra Deep Learning Resources](./dl-res.md): __TO EDIT__
+## [Extra Deep Learning Resources](./dl-res.md)
 
 # Projects
 
@@ -55,8 +55,6 @@ Advanced techniques of Computer Vision such as filtering, corner detection, keyp
 + __Baby Jarvis II__: Distinguish between happy and sad faces using Keras, OpenCV and Raspberry Pi. (Difficulty: 5)
 
 + __Baby Jarvis III__: Proof-of-concept driver monitoring system by detecting if the user is sleeping, checking the phone or doing other reckless activities while driving. (Difficulty: 6)
-
-<!-- + __Where’s Waldo?__: Find Waldo in the original picture given a query using OpenCV. (Difficulty: 6) -->
 
 + __Are You Human?__: Break a CAPTCHA that uses simple math as the question. (Difficulty: 6)
 
@@ -71,9 +69,13 @@ station and find the position from Google Map! (Difficulty: 7)
 
 + __(Advanced) Object Tracking__: Develop a model-free object tracker for [VOT Challenge](http://www.votchallenge.net/vot2017/index.html)! (Difficulty: 9)
 
++ __(Advanced) Real-world Image Classification__: Develop a classifier for [TinyImageNet](https://tiny-imagenet.herokuapp.com/) using state-of-the-art Deep Networks and run it as fast as you can on Raspberry Pi! (Difficulty: 8)
+
 + Or... your ideas!
 
 __Remark__: Difficulty scale: 1 (so easy) -- 10 (way too hard)
+
+__Remark__: First-come-First-serve basis in selecting project. Up to two groups selecting the same project.
 
 ## Timeline
 

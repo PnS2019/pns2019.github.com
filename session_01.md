@@ -482,15 +482,16 @@ __Remarks__: As defined in the `function` API, the input tensors have to be a li
 We can also compute more than one thing at the same time by using multiple outputs. Say we want to add two tensors, subtract two tensors, perform an element-wise squaring operation on one of the tensors and get the element-wise exponential of the other tensor.
 
 ```python
-variable_1 = K.ones(shape=(2, 2))
-variable_2 = K.ones(shape=(2, 2))
+# we redefine the input_1 and input_2 tensors
+input_1 = K.placeholder(shape=(2, 2))
+input_2 = K.placeholder(shape=(2, 2))
 
-add_tensor = variable_1 + variable_2
-subtract_tensor = variable_1 - variable_2
-square_1_tensor = variable_1 ** 2
-exp_2_tensor = K.exp(variable_2)
+add_tensor = input_1 + input_2
+subtract_tensor = input_1 - input_2
+square_1_tensor = input_1 ** 2
+exp_2_tensor = K.exp(input_2)
 
-multiple_output_function = K.function(inputs=(variable_1, variable_2),
+multiple_output_function = K.function(inputs=(input_1, input_2),
                                       outputs=(add_tensor,
                                                subtract_tensor,
                                                square_1_tensor,
@@ -503,11 +504,16 @@ multiple_output_function((np.array([[1, 3], [2, 4]]),
 Now we can get to the important part of differentiating with respect to the variables. Once we have created the variables and performed operations of interest on them, we would like to get the gradients of the output symbols from those operations with respect to the variables.
 
 ```python
+# we redefine the input_1 and input_2 tensors
+input_1 = K.placeholder(shape=(2, 2))
+input_2 = K.placeholder(shape=(2, 2))
+
 variable_1 = K.ones(shape=(2, 2))
 variable_2 = K.ones(shape=(2, 2))
 
-square_1_tensor = variable_1 ** 2
-exp_tensors_added = K.exp(variable_1) + K.exp(variable_2)
+
+square_1_tensor = input_1*variable_1**2+input_2*variable_2**2
+exp_tensors_added = K.exp(input_1*variable_1) + K.exp(input_2*variable_2)
 
 # we can compute the gradients with respect to a single variable or
 # a list of variables
@@ -525,7 +531,7 @@ grad_3_tensor = K.gradients(loss=exp_tensors_added,
                                        variable_2])
 
 # we can now create functions corresponding to these operations
-grad_functions = K.function(inputs=(variable_1, variable_2),
+grad_functions = K.function(inputs=(input_1, input_2),
                              outputs=(grad_1_tensor[0],
                                       grad_3_tensor[0],
                                       grad_3_tensor[1]))

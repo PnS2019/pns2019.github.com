@@ -23,7 +23,7 @@ _If you have no idea about Machine Learning and Scientific Computing, I suggest 
 |[Pattern Recognition and Machine Learning](http://research.microsoft.com/en-us/um/people/cmbishop/prml/)|Christopher Bishop|
 |[Machine Learning: A probabilistic perspective](http://www.cs.ubc.ca/~murphyk/MLbook/)|Kevin Patrick Murphy|
 |[CS229 Machine Learning Course Materials](http://cs229.stanford.edu/materials.html)|Andrew Ng at Stanford University|
-|[Reinforcement Learning: An Introduction](http://webdocs.cs.ualberta.ca/~sutton/book/the-book.html)|Richard S. Sutton and Andrew G. Barto|
+|[Reinforcement Learning: An Introduction](http://incompleteideas.net/book/RLbook2018.pdf)|Richard S. Sutton and Andrew G. Barto|
 |[Probabilistic Graphical Models: Principles and Techniques](http://mitpress.mit.edu/books/probabilistic-graphical-models)|Daphne Koller and Nir Friedman|
 |[Convex Optimization](http://stanford.edu/~boyd/cvxbook/)|Stephen Boyd and Lieven Vandenberghe|
 |[An Introduction to Statistical Learning with application in R](http://www-bcf.usc.edu/~gareth/ISL/)|Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani|
@@ -53,9 +53,6 @@ _If you have no idea about Machine Learning and Scientific Computing, I suggest 
 |[CS231n: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/)|Stanford University|
 |[CS224d: Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/)|Stanford University|
 |[Theano](http://deeplearning.net/software/theano/)|MILA Lab, University of Montreal|
-|[Caffe](http://caffe.berkeleyvision.org/)|Berkeley Vision and Learning Center (BVLC) and community contributor Yangqing Jia|
-|[Torch 7](http://torch.ch/)|active contributors|
-|[neon](http://neon.nervanasys.com/docs/latest/index.html)|Nervana|
 |[cuDNN](https://developer.nvidia.com/cuDNN)|NVIDIA|
 |[ConvNetJS](http://cs.stanford.edu/people/karpathy/convnetjs/index.html)|Andrej Karpathy|
 |[DeepLearning4j](http://deeplearning4j.org/)||

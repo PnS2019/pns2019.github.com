@@ -151,6 +151,8 @@ Computer Vision tasks.
 
 ## Corner Detection
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1FGs27KCZbh4h2zB9LWMwRGvTrCgLn0mR)
+
 Corner Detection is one of the classical procedure of Computer Vision
 preprocessing due to the reason that the corners represent
 a large variation in intensity in many directions.
@@ -194,6 +196,8 @@ you can get optimal results.
 
 ## Keypoints Detection
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1p7McfxQdXSD32KO3jPFigejiiTQjKivp)
+
 The corner detection is easy to implement and useful if you have
 a picture that has a static resolution. And it is obvious that
 this process is _rotation invariant_. However, when you scale the
@@ -234,15 +238,11 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # you will need to run the following code to install
 # pip install opencv-contrib-python -U
 sift = cv2.xfeatures2d.SIFT_create()
-# for raspberry pi
-sift = cv2.SIFT()
 
 kp = sift.detect(gray, None)
 
 # for opencv 3.x and above
 cv2.drawKeypoints(gray, kp, img)
-# for Raspberry Pi
-img = cv2.drawKeypoints(gray, kp)
 
 cv2.imshow('dst', img)
 cv2.waitKey(0)
@@ -264,6 +264,8 @@ even today. They are perhaps the most widely adopted feature engineering
 techniques in "classical" Computer Vision (before the DL era).
 
 ## Feature Matching
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1FF1J9njP7-Xoj5DwhldHVfqj7hM8KZgx)
 
 Let's now consider a concrete application of the keypoints - _Feature Matching_.
 We want to calculate the correspondence between the descriptors
@@ -318,8 +320,6 @@ for m, n in matches:
 
 # draw matches on the image
 img3 = cv2.drawMatches(img1, kp1, img2, kp2, good, None, flags=2)
-# for raspberry pi
-img3 = cv2.drawMatches(img1, kp1, img2, kp2, good, flags=2)
 
 # display the result
 plt.imshow(img3, 'gray'), plt.show()
@@ -335,6 +335,8 @@ if you are running this on the Raspberry Pi.
 
 ## Face Detection
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1CmZwkzrkap3nvPvUbuYy3NBZPe5jYZls)
+
 In this section, we would like to show how you can detect a human
 face with OpenCV. This is achieved by using _Haar Feature-based
 cascade Classifiers_. The idea is straightforward, by giving many
@@ -349,7 +351,7 @@ the `pnslib`. If you don't have it, clone the project to any
 directory:
 
 ```
-$ git clone https://github.com/PnS2018/pnslib
+$ git clone https://github.com/PnS2019/pnslib
 $ cd pnslib
 ```
 
@@ -457,7 +459,7 @@ Before you start a project, there are a few things (not an exhaustive list by an
 So your folder structure should take care of these requirements.
 
 #### Folder structure
-Initialize a github project on the pns2018 github repository, and clone it to your working machine. The folder structure can be organized as follows.
+Initialize a github project on the PnS2019 github repository, and clone it to your working machine. The folder structure can be organized as follows.
 
 1. __README__ file: A README file with some basic information about the project, like the required dependencies, setting up the project and replicating an experiment, links to the dataset, is really useful both for you and anyone you are sharing your project with.
 2. __data__ folder: A data folder to host the data is useful if it is kept separate. Given that some of your projects involve data collection, your data generation scripts can also be hosted in this directory.
@@ -468,7 +470,7 @@ Initialize a github project on the pns2018 github repository, and clone it to yo
 
 You can modify this basic structure to suit the needs of your project, but make sure that you start with a plan rather than figuring out your project structure on the go.
 
-An example project repository can be found [here](https://github.com/PnS2018/sample_project_repository).
+An example project repository can be found [here](https://github.com/PnS2019/sample_project_repository).
 
 ## Tips and Tricks in Machine Learning
 
@@ -523,7 +525,7 @@ questions.
 
 In the last five sessions, we learned how to use Keras for symbolic computation
 and solving Machine Learning problems. We also learned how to use
-OpenCV, numpy, scikit-image to process image data.
+OpenCV, `numpy`, `scikit-image` to process image data.
 You might be overwhelmed by how many software there are to solve
 some particular problems. You probably wonder if this is enough for
 dealing with practical issues in future projects.

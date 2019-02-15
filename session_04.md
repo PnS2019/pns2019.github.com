@@ -64,6 +64,8 @@ import skimage
 
 ### Scaling
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/130dqzJgSGFdtdNZ_9fR__AiGhs7uBHvK)
+
 Scaling (resizing) an image concerns with the topic of up-sampling and down-sampling.
 For example, the Max-Pooling operation we introduced in Session 3 is
 a way of scaling an image. In this section, we shell use the OpenCV's API
@@ -135,6 +137,8 @@ Check out the detailed documentation at [here](http://scikit-image.org/docs/dev/
 
 ### Translation
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1RmXOP3TUlTCf11ZHiGMuRWXdFGF2pp3v)
+
 Image translation shifts the content of an image to another pre-defined
 location.
 
@@ -190,7 +194,7 @@ import matplotlib.pyplot as plt
 img = imread("Lenna.png", as_grey=True)
 
 # translate the image
-tform = SimilarityTransform(translation=(-50, -100))
+tform = SimilarityTransform(translation=(-100, -50))
 warped = warp(img, tform)
 
 # display the image
@@ -200,6 +204,8 @@ plt.show()
 ```
 
 ### Rotation
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1roCGZEaH4T2N98UCWNcPfuADLX582RnZ)
 
 Rotation of an image for an angle $$\theta$$ in OpenCV is achieved by
 defining a rotation matrix that has the form of
@@ -252,6 +258,8 @@ plt.show()
 ```
 
 ### Affine transformation
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1msFjrjSaUmzNG43mTROwbngC4sRu0lws)
 
 Affine transformation is a linear mapping method that preserves
 points, straight lines and planes.
@@ -325,6 +333,8 @@ the `AffineTransform` API.
 
 ### Image thresholding
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1he5V4FuZezC1JDxvPuVj5eIuXLfP33h2)
+
 Thresholding may be one of the most straightforward Computer Vision
 algorithms. Given a _grayscale_ image, each pixel is assigned to a
 new value that depends on the original pixel intensity and a
@@ -385,7 +395,7 @@ is:
 
 ```python
 from skimage.io import imread
-from skimage.filters import threshold_adaptive
+from skimage.filters import threshold_local
 
 import matplotlib.pyplot as plt
 
@@ -396,10 +406,10 @@ img = imread("Lenna.png", as_grey=True)
 th1 = img > 0.5
 
 # mean thresholding
-th2 = img > threshold_adaptive(img, 11, method="mean", offset=2/255.)
+th2 = img > threshold_local(img, 11, method="mean", offset=2/255.)
 
 # gaussian thresholding
-th3 = img > threshold_adaptive(img, 11, method="gaussian", offset=2/255.)
+th3 = img > threshold_local(img, 11, method="gaussian", offset=2/255.)
 
 # display results
 titles = ['Original Image', 'Global Thresholding (v = 127)',
@@ -414,6 +424,8 @@ plt.show()
 ```
 
 ### Filtering
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1YSAIeyvisZXIp91qUGvGHjgCWoOVtvLg)
 
 In last session, we discussed how a filter in ConvNet can be used to produce
 feature map. The process of applying a filter is _convolution_.
@@ -568,6 +580,8 @@ plt.show()
 ```
 
 ### Edge Detection
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/10ZIvyVgDjGlWd09LJZzwboQs-4RPlCut)
 
 The above section on gradients provides a set of simple edge
 detectors (e.g., horizontal or vertical edges). However, the quality

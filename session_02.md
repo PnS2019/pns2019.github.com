@@ -121,6 +121,9 @@ Note that $$\{\mathbf{x}^{(i)}, y^{(i)}\}$$ is the $$i$$-th sample in the datase
 Suppose that the target value is a scalar ($$y^{(i)}\in\mathbb{R}$$), we can easily define such a model in Keras:
 
 ```python
+from tensorflow.keras.layers import Input, Dense
+from tensorflow.keras.models import Model
+
 x = Input((10,), name="input layer")  # the input feature has 10 values
 y = Dense(1, name="linear layer")(x)  # implement linear function
 model = Model(x, y)  # compile the hypothesis function
@@ -198,6 +201,9 @@ $$
 Note that there is a close tie between the Logistic Regression and the Linear Regression. The Logistic Regression is nothing more than adding a non-linear function on top of the linear function. Here is an example of logistic regression in Keras:
 
 ```python
+from tensorflow.keras.layers import Input, Dense, Activation
+from tensorflow.keras.models import Model
+
 x = Input((10,), name="input_layer")
 y = Dense(1, name="linear layer")(x)
 y = Activation("sigmoid")(y)
@@ -233,6 +239,9 @@ $$
 Here is a Keras example
 
 ```python
+from tensorflow.keras.layers import Input, Dense, Activation
+from tensorflow.keras.models import Model
+
 x = Input((10,), name="input_layer")
 y = Dense(5, name="linear layer")(x)  # suppose there are 5 classes
 y = Activation("softmax")(y)

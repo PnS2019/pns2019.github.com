@@ -7,12 +7,11 @@ from __future__ import print_function, absolute_import
 import numpy as np
 import matplotlib.pyplot as plt
 
-from keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten
-from keras.models import Model
-from keras.utils import to_categorical
+from tensorflow.keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten
+from tensorflow.keras.models import Model
+from tensorflow.keras.utils import to_categorical
 
 from pnslib import utils
-from pnslib import ml
 
 # Load all the ten classes from Fashion MNIST
 # complete label description is at
@@ -22,7 +21,7 @@ from pnslib import ml
 
 num_classes = 10
 
-print ("[MESSAGE] Dataset is loaded.")
+print("[MESSAGE] Dataset is loaded.")
 
 # preprocessing for training and testing images
 train_x = train_x.astype("float32")/255.  # rescale image
@@ -31,7 +30,7 @@ train_x -= mean_train_x  # remove the mean pixel value from image
 test_x = test_x.astype("float32")/255.
 test_x -= mean_train_x
 
-print ("[MESSAGE] Dataset is preprocessed.")
+print("[MESSAGE] Dataset is preprocessed.")
 
 # converting the input class labels to categorical labels for training
 train_Y = to_categorical(train_y, num_classes=num_classes)
@@ -59,7 +58,7 @@ model.summary()
 
 
 
-print ("[MESSAGE] Model is compiled.")
+print("[MESSAGE] Model is compiled.")
 
 # train the model with fit function
 # See https://keras.io/models/model/ for usage
@@ -86,8 +85,8 @@ labels = ["Tshirt/top", "Trouser", "Pullover", "Dress", "Coat", "Sandal",
           "Shirt", "Sneaker", "Bag", "Ankle Boot"]
 
 plt.figure()
-for i in xrange(2):
-    for j in xrange(5):
+for i in range(2):
+    for j in range(5):
         plt.subplot(2, 5, i*5+j+1)
         plt.imshow(test_x[i*5+j], cmap="gray")
         plt.title("Ground Truth: %s, \n Prediction %s" %

@@ -7,8 +7,8 @@ from __future__ import print_function, absolute_import
 import numpy as np
 import matplotlib.pyplot as plt
 
-from keras import backend as K
-from keras.utils import to_categorical
+from tensorflow.keras import backend as K
+from tensorflow.keras.utils import to_categorical
 
 from pnslib import utils
 from pnslib import ml
@@ -21,7 +21,7 @@ from pnslib import ml
 
 num_classes = 10
 
-print ("[MESSAGE] Dataset is loaded.")
+print("[MESSAGE] Dataset is loaded.")
 
 # preprocessing for training and testing images
 train_x = train_x.astype("float32")/255.  # rescale image
@@ -30,7 +30,7 @@ train_x -= mean_train_x  # remove the mean pixel value from image
 test_x = test_x.astype("float32")/255.
 test_x -= mean_train_x
 
-print ("[MESSAGE] Dataset is preprocessed.")
+print("[MESSAGE] Dataset is preprocessed.")
 
 # Use PCA to reduce the dimension of the dataset,
 # so that the training will be less expensive
@@ -40,7 +40,7 @@ train_X, R, n_retained = ml.pca(train_x)
 # perform PCA on testing dataset
 test_X = ml.pca_fit(test_x, R, n_retained)
 
-print ("[MESSAGE] PCA is complete.")
+print("[MESSAGE] PCA is complete.")
 
 # converting the input class labels to categorical labels for training
 train_Y = to_categorical(train_y, num_classes=num_classes)
@@ -175,7 +175,8 @@ bias_variables.append(bias_variable)
 loss_tensor = K.mean(K.categorical_crossentropy(target_tensor,
                                                 output_tensor))
 
-# combining the weights and biases into a single list of variables for the model
+# combining the weights and biases into a single
+# list of variables for the model
 variables = weight_variables + bias_variables
 
 # getting the gradients of the mean loss with respect to the weight and bias
@@ -184,7 +185,7 @@ gradient_tensors = K.gradients(loss=loss_tensor, variables=variables)
 # creating the updates based on stochastic gradient descent rule
 # you can play around with other rules if you are interested
 updates = [(variable, variable - lr * gradient) for (variable, gradient)
-    in zip(variables, gradient_tensors)]
+           in zip(variables, gradient_tensors)]
 
 # creating a training function which also updates the variables when the
 # function is called based on the lists of updates provided
@@ -199,14 +200,14 @@ prediction_tensor = K.cast(K.argmax(output_tensor, axis=1), dtype='float32')
 # tensors
 target_argmax_tensor = K.cast(K.argmax(target_tensor, axis=1), dtype='float32')
 accuracy_tensor = K.equal(prediction_tensor,
-                                 target_argmax_tensor)
+                          target_argmax_tensor)
 
 # a test function to evaluate the performance of the model
 test_function = K.function(inputs=(input_tensor, target_tensor),
                            outputs=(accuracy_tensor, prediction_tensor))
 
 num_batches = num_train_samples // batch_size
-indices = range(num_train_samples)
+indices = list(range(num_train_samples))
 
 for epoch in range(num_epochs):
     epoch_loss = 0.
@@ -251,8 +252,8 @@ labels = ["Tshirt/top", "Trouser", "Pullover", "Dress", "Coat", "Sandal",
           "Shirt", "Sneaker", "Bag", "Ankle Boot"]
 
 plt.figure()
-for i in xrange(2):
-    for j in xrange(5):
+for i in range(2):
+    for j in range(5):
         plt.subplot(2, 5, i*5+j+1)
         plt.imshow(test_x[i*5+j].reshape(28, 28), cmap="gray")
         plt.title("Ground Truth: %s, \n Prediction %s" %

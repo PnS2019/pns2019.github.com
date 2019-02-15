@@ -108,6 +108,8 @@ $$
 A Keras example is as follows:
 
 ```python
+from tensorflow.keras.layers import Dense, Activation
+
 x = Dense(100)(x)  # the layer has 100 neuron
 x = Activation("relu")(x)  # the activation function is ReLU
 ```
@@ -209,6 +211,8 @@ Additionally, there are two configurations for defining the convolution layer: _
 filters jump two pixels at a time. The above example has a stride that is equal to two in both horizontal and vertical directions. A Keras example is as follows:
 
 ```python
+from tensorflow.keras.layers import Conv2D, Activation
+
 x = Conv2D(filters=10,          # this layer has 10 filters
            kernel_size=(3, 3),  # the filter size is 3x3
            strides=(2, 2),      # horizontal stride is 2, vertical stride is 2
@@ -300,6 +304,8 @@ $$
 where the $$i$$ (the row index) and $$y$$ (the column index) start from 0. We also assume that the padding has been done beforehand. A Keras example is given as follows:
 
 ```python
+from tensorflow.keras.layers import MaxPooling2D
+
 x = MaxPooling2D((2, 2))(x)  # perform max-pooling over 2x2 non-overlapping region
 ```
 
@@ -315,6 +321,8 @@ $$
 A Keras example is given as follows:
 
 ```python
+from tensorflow.keras.layers import AveragePooling2D
+
 x = AveragePooling2D((2, 2))(x)  # perform average-pooling over 2x2 non-overlapping region
 ```
 
@@ -329,6 +337,8 @@ __Remark__: Recently, people tend to use convolution that has larger strides to 
 The output of convolution and pooling layers for a single sample is organized in a 3D tensor. And commonly, we would like to reorganize this tensor to a 1D vector so that we can manipulate all "information" carried by the output easily. This process is called _flatten_. The flatten operation simply "stretch" an $$N$$-D tensor into a 1D vector. In Keras, you can use the `Flatten` layer to do this job:
 
 ```python
+from tensorflow.keras.layers import Flatten
+
 x = Flatten()(x)
 ```
 
@@ -343,7 +353,8 @@ __Remark__: The development of modern ConvNet-based architectures is beyond the 
 With Keras, you can save your compiled model into a directed graph image, this model image can also provide additional information about the tensor shape of each layer. e.g.,
 
 ```python
-from keras.utils import plot_model
+from tensorflow.keras.utils import plot_model
+
 plot_model(model, to_file='model.png',
            show_shapes=True)
 ```
@@ -365,7 +376,8 @@ $$
 where $$\lambda$$ is a small constant that controls the weight decay speed. A Keras example is given as follows:
 
 ```python
-from keras import regularizers
+from tensorflow.keras import regularizers
+
 x=Dense(64,
         kernel_regularizer=regularizers.l2(0.01))(x)  # add L2 regularization on weights of this layer 
 ```
@@ -392,6 +404,8 @@ $$
 Note that this process is only performed during the network training so that the generalization could be improved. It switches off during the testing/inference phase. A Keras example is given as follows:
 
 ```python
+from tensorflow.keras.layers import Dropout
+
 x = Dropout(0.3)(x)  # 30 of the neurons are dropped
 ```
 
@@ -415,6 +429,8 @@ $$
 where the equation takes the layer's output activation $$\mathbf{h}$$ and normalizes it into $$\hat{\mathbf{h}}$$, $$\gamma$$ and $$\beta$$ are trainable parameters that are called scale and shift parameters respectively, and $$\varepsilon$$ is a small regularization constant. A Keras example is as follows:
 
 ```python
+from tensorflow.keras.layers import BatchNormalization
+
 x = BatchNormalization()(x)  # perform BN on the input
 ```
 

@@ -7,8 +7,8 @@ from __future__ import print_function, absolute_import
 import numpy as np
 import matplotlib.pyplot as plt
 
-from keras import backend as K
-from keras.utils import to_categorical
+from tensorflow.keras import backend as K
+from tensorflow.keras.utils import to_categorical
 
 from pnslib import utils
 from pnslib import ml
@@ -21,7 +21,7 @@ from pnslib import ml
 
 num_classes = 10
 
-print ("[MESSAGE] Dataset is loaded.")
+print("[MESSAGE] Dataset is loaded.")
 
 # preprocessing for training and testing images
 train_x = train_x.astype("float32")/255.  # rescale image
@@ -30,7 +30,7 @@ train_x -= mean_train_x  # remove the mean pixel value from image
 test_x = test_x.astype("float32")/255.
 test_x -= mean_train_x
 
-print ("[MESSAGE] Dataset is preprocessed.")
+print("[MESSAGE] Dataset is preprocessed.")
 
 # Use PCA to reduce the dimension of the dataset,
 # so that the training will be less expensive
@@ -40,7 +40,7 @@ train_X, R, n_retained = ml.pca(train_x)
 # perform PCA on testing dataset
 test_X = ml.pca_fit(test_x, R, n_retained)
 
-print ("[MESSAGE] PCA is complete.")
+print("[MESSAGE] PCA is complete.")
 
 # converting the input class labels to categorical labels for training
 train_Y = to_categorical(train_y, num_classes=num_classes)
@@ -77,7 +77,7 @@ num_units = [100, 100]
 
 # training loop here
 num_batches = num_train_samples // batch_size
-indices = range(num_train_samples)
+indices = list(range(num_train_samples))
 
 for epoch in range(num_epochs):
     epoch_loss = 0.
@@ -124,8 +124,8 @@ labels = ["Tshirt/top", "Trouser", "Pullover", "Dress", "Coat", "Sandal",
           "Shirt", "Sneaker", "Bag", "Ankle Boot"]
 
 plt.figure()
-for i in xrange(2):
-    for j in xrange(5):
+for i in range(2):
+    for j in range(5):
         plt.subplot(2, 5, i*5+j+1)
         plt.imshow(test_x[i*5+j].reshape(28, 28), cmap="gray")
         plt.title("Ground Truth: %s, \n Prediction %s" %

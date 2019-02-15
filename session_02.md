@@ -152,6 +152,8 @@ The array `A` is a row vector and has only the row axis. We assume that the read
 
 ## Logistic Regression
 
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1cXKA_57f9V4UWGmKlJ90HMAs6wWgjfWR)
+
 In this section, we discuss the solution to another Supervised Learning task - _Binary Classification_. Instead of predicting continuous values (e.g., how many pairs of shoes you have), we wish to decide whether the input feature $$\mathbf{x}$$ belongs to some category. In the case of Binary Classification, we have only two classes (e.g., to be or not to be, shoe or skirt).  _Logistic Regression_ is a simple learning algorithm that solves this kind of tasks.
 
 __Remark__: Usually, we call a learning algorithm that solves binary classification a _Binary Classifier_.

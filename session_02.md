@@ -382,12 +382,21 @@ $ cd pnslib
 $ python setup.py develop  # add sudo in front if there is a permission error.
 ```
 
+__Remark__: You can skip this step if you're using Raspberry Pi we prepared for you. On Colaboratory, you can use the following line to install `pnslib`:
+
+```bash
+# install pnslib
+!pip install git+git://github.com/PnS2019/pnslib.git
+```
+
 Note that we are going to use `pnslib` package for both exercises and projects in future. You will need to update the package for the latest changes.
 
 ```bash
 $ cd pnslib
 $ git pull origin master
 ```
+
+If you decide to use Colaboratory to complete the exercise, please follow the description at [here](./colab-intro.md).
 
 1. We provide a [template script](./res/code/logistic-regression-with-keras-layers-template.py) that has the barebone structure of implementing Logistic Regression in Keras. You will need to complete the script and get it running. You are expected to define a Logistic Regression model, compile the model with binary cross-entropy loss and a optimizer, and train the model. If you can successfully train the model, try to change the choice of optimizer, what do you observe?
 

@@ -411,6 +411,15 @@ add_function((np.array([[1, 3], [2, 4]]),
               np.array([[3, 2], [5, 6]])))
 ```
 
+---
+
+<div align="center">
+    <p><img src="./images/computation_graph.png" width="32%"></p>
+    <p>An example of a computation graph.</p>
+</div>
+
+---
+
 The main advantage of using symbolic computation is automatic differentiation, which is crucial in deep learning.
 
 For this, we need to get acquainted with `keras` variables. While `keras` placeholders are a way to instantiate tensors, they are placeholder tensors for users to substitute values into to carry out their intended computation. To be able to use the automatic differentiation in `keras`, we need to define variables, with respect to which we can differentiate other symbols.

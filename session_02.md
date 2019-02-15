@@ -69,6 +69,8 @@ All the DNN architectures discussed in this module can be formulated in this par
 Strictly speaking, the hypothesis function defines a large family of functions that could be the solution to the task $$T$$. At the end of training, the hypothesis function is expected to be parameterized by a set of optimal parameters $$\theta^{\star}$$ that yields the highest performance according to the performance measure $$P$$ of the given task. Conventionally, we call the hypothesis function that equips the optimal parameters $$\theta^{\star}$$ the
 _trained model_.
 
+__Remark__: Interested reader can take a look at _The Elements of Statistical Learning_ by Jerome H. Friedman, Robert Tibshirani, and Trevor Hastie where this book offers in-depth discussion on this topic.
+
 ### Cost Function
 
 A cost function $$J$$ is selected according to the objective(s) of the hypothesis function in which it defines the constraints. The cost function is minimized during the training so that the hypothesis function can be optimized and exhibits the desired behaviors (e.g., classify images, predict houshold value, text-to-speech). The cost function reflects the performance measure $$P$$ directly or indirectly. In most cases, the performance of a learning algorithm gets higher
@@ -84,7 +86,7 @@ and `TensorFlow` (Abadi et al., 2015) have automated the process of computing th
 a symbolic computation graph. This automation enables the researchers to
 design and train arbitrary learning models.
 
-__Remark__: in this module, we use the term "cost function", "objective function" and "loss function" interchangeably. Usually, the loss function is denoted as $$\mathcal{L}$$.
+__Remark__: in this module, we use the term "cost function", "objective function" and "loss function" interchangeably. Usually, we also use the term $$J$$ and $$\mathcal{L}$$ interchangeably.
 
 ### Ingredients to Solve a Machine Learning Task
 
@@ -100,6 +102,8 @@ Given a Machine Learning task, you need to have following ingredients for solvin
 In this module, we will identify these ingredients while solving different tasks.
 
 ## Linear Regression
+
+[![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1XI407WXf9efxRqoR__X23tt93V5530m0)
 
 Regression is a task of Supervised Learning. The goal is to take a input vector $$\mathbf{x}\in\mathbb{R}^{n}$$ (a.k.a, features) and predict a target value $$y\in\mathbb{R}$$. In this section, we will learn how to implement _Linear Regression_.
 

@@ -69,7 +69,7 @@ station and find the position from Google Map! (Difficulty: 7)
 
 + __(Advanced) Object Tracking__: Develop a model-free object tracker for [VOT Challenge](http://www.votchallenge.net/vot2017/index.html)! (Difficulty: 9)
 
-+ __(Advanced) Real-world Image Classification__: Develop a classifier for [TinyImageNet](https://tiny-imagenet.herokuapp.com/) using state-of-the-art Deep Networks and run it as fast as you can on Raspberry Pi! (Difficulty: 8)
++ __(Advanced) Real-world Image Classification__: Develop a classifier for [TinyImageNet](https://tiny-imagenet.herokuapp.com/) using state-of-the-art Deep Networks and run it as fast as you can on Raspberry Pi! (Difficulty: 9)
 
 + Or... your ideas!
 

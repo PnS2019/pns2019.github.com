@@ -100,10 +100,21 @@ Generally, with Miniconda, we have three ways of installing other Python package
 ## Do I Need Anything Else?
 
 Miniconda offers a minimum setup for Python. You will need to install some extra
-packages for running experiments in this module.
+packages for running experiments in this module. Simply run these commands sequentially
+
+```bash
+$ pip install numpy
+$ pip install scipy
+$ pip install scikit-learn
+$ pip install scikit-image
+$ pip install opencv-contrib-python
+$ pip install matplotlib
+$ pip install h5py
+$ pip install tensorflow
+```
 
 You should familiarize yourself with the software packaging system on your computer.
-For Debian family (including Ubuntu), that is `apt-get` or `apt`. For macOS, that is either `MacPorts` or `homebrew`.
+For Debian family (including Ubuntu), that is `apt-get` or `apt`. For macOS, that is either `MacPorts` or `homebrew` (strongly recommended).
 
 ## IDE (Integrated Development Environment)
 

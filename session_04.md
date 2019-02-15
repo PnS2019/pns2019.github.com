@@ -697,25 +697,29 @@ Note that image augmentation is not applied in the testing phase because the goa
 Keras implements many useful image geometric transformation and normalization methods. The description of the `ImageDataGenerator` is as follows:
 
 ```python
-keras.preprocessing.image.ImageDataGenerator(featurewise_center=False,
+tensorflow.keras.preprocessing.image.ImageDataGenerator(
+    featurewise_center=False,
     samplewise_center=False,
     featurewise_std_normalization=False,
     samplewise_std_normalization=False,
     zca_whitening=False,
-    zca_epsilon=1e-6,
-    rotation_range=0.,
-    width_shift_range=0.,
-    height_shift_range=0.,
-    shear_range=0.,
-    zoom_range=0.,
-    channel_shift_range=0.,
+    zca_epsilon=1e-06,
+    rotation_range=0,
+    width_shift_range=0.0,
+    height_shift_range=0.0,
+    brightness_range=None,
+    shear_range=0.0,
+    zoom_range=0.0,
+    channel_shift_range=0.0,
     fill_mode='nearest',
-    cval=0.,
+    cval=0.0,
     horizontal_flip=False,
     vertical_flip=False,
     rescale=None,
     preprocessing_function=None,
-    data_format=K.image_data_format())
+    data_format=None,
+    validation_split=0.0,
+    dtype=None)
 ```
 
 This generator firstly takes the training features (e.g., $$\mathbf{X}$$) and then computes some statistics,

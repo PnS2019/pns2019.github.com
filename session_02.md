@@ -377,7 +377,7 @@ In this exercise, you will need to implement Logistic Regression to distinguish 
 We provide some useful functions for accessing the Fashion-MNIST datasets in `pnslib`, please first clone and install the `pnslib` by:
 
 ```bash
-$ git clone https://github.com/PnS2018/pnslib
+$ git clone https://github.com/PnS2019/pnslib
 $ cd pnslib
 $ python setup.py develop  # add sudo in front if there is a permission error.
 ```

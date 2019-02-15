@@ -7,8 +7,8 @@ from __future__ import print_function, absolute_import
 import numpy as np
 import matplotlib.pyplot as plt
 
-from keras.layers import Input, Dense
-from keras.models import Model
+from tensorflow.keras.layers import Input, Dense
+from tensorflow.keras.models import Model
 
 from pnslib import utils
 from pnslib import ml
@@ -20,7 +20,7 @@ from pnslib import ml
     class_list=[0, 1],
     flatten=True)
 
-print ("[MESSAGE] Dataset is loaded.")
+print("[MESSAGE] Dataset is loaded.")
 
 
 # preprocessing for training and testing images
@@ -30,7 +30,7 @@ train_x -= mean_train_x  # remove the mean pixel value from image
 test_x = test_x.astype("float32")/255.
 test_x -= mean_train_x
 
-print ("[MESSAGE] Dataset is preporcessed.")
+print("[MESSAGE] Dataset is preporcessed.")
 
 # Use PCA to reduce the dimension of the dataset,
 # so that the training will be less expensive
@@ -40,7 +40,7 @@ train_X, R, n_retained = ml.pca(train_x)
 # perform PCA on testing dataset
 test_X = ml.pca_fit(test_x, R, n_retained)
 
-print ("[MESSAGE] PCA is complete")
+print("[MESSAGE] PCA is complete")
 
 # define a model
 num_train_samples = train_X.shape[0]
@@ -62,7 +62,7 @@ model.compile(loss="binary_crossentropy",
               optimizer="sgd",
               metrics=["accuracy"])
 
-print ("[MESSAGE] Model is compiled")
+print("[MESSAGE] Model is compiled")
 
 # train the model
 history = model.fit(
@@ -83,8 +83,8 @@ preds = (model.predict(test_X_vis) > 0.5)[:, 0].astype(np.int)
 labels = ["Tshirt/top", "Trouser"]
 
 plt.figure()
-for i in xrange(2):
-    for j in xrange(5):
+for i in range(2):
+    for j in range(5):
         plt.subplot(2, 5, i*5+j+1)
         plt.imshow(test_x[i*5+j].reshape(28, 28), cmap="gray")
         plt.title("Ground Truth: %s, \n Prediction %s" %

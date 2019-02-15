@@ -7,7 +7,7 @@ from __future__ import print_function, absolute_import
 import numpy as np
 import matplotlib.pyplot as plt
 
-from keras import backend as K
+from tensorflow.keras import backend as K
 
 from random import shuffle
 
@@ -21,7 +21,7 @@ from pnslib import ml
     class_list=[0, 1],
     flatten=True)
 
-print ("[MESSAGE] Dataset is loaded.")
+print("[MESSAGE] Dataset is loaded.")
 
 
 # preprocessing for training and testing images
@@ -31,7 +31,7 @@ train_x -= mean_train_x  # remove the mean pixel value from image
 test_x = test_x.astype("float32")/255.
 test_x -= mean_train_x
 
-print ("[MESSAGE] Dataset is preporcessed.")
+print("[MESSAGE] Dataset is preporcessed.")
 
 # Use PCA to reduce the dimension of the dataset,
 # so that the training will be less expensive
@@ -41,7 +41,7 @@ train_X, R, n_retained = ml.pca(train_x)
 # perform PCA on testing dataset
 test_X = ml.pca_fit(test_x, R, n_retained)
 
-print ("[MESSAGE] PCA is complete")
+print("[MESSAGE] PCA is complete")
 
 # sample sizes and feature dimensions
 num_train_samples = train_X.shape[0]
@@ -102,7 +102,7 @@ test_function = K.function(inputs=(input_tensor, target_tensor),
                            outputs=(accuracy_tensor, prediction_tensor))
 
 num_batches = num_train_samples // batch_size
-indices = range(num_train_samples)
+indices = list(range(num_train_samples))
 
 for epoch in range(num_epochs):
     epoch_loss = 0.
@@ -145,8 +145,8 @@ preds = np.squeeze(preds, axis=-1).astype(np.int)
 labels = ["Tshirt/top", "Trouser"]
 
 plt.figure()
-for i in xrange(2):
-    for j in xrange(5):
+for i in range(2):
+    for j in range(5):
         plt.subplot(2, 5, i*5+j+1)
         plt.imshow(test_x[i*5+j].reshape(28, 28), cmap="gray")
         plt.title("Ground Truth: %s, \n Prediction %s" %

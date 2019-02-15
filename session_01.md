@@ -425,11 +425,14 @@ The above code represents a _computation graph_ which takes two inputs and gives
 Computation graph is the essential concept of symbolic computation where the tensors in this case define the steps of the computation and the graph compilation (achieved by `K.function` API) turns the graph into a __function__. Note that before compiling, the elements in the graph are merely symbols. The main advantage of using symbolic computation is _automatic differentiation_ which can be directly derived from a graph. Almost all training algorithms in
 deep learning relay on this powerful technique.
 
-For this, we need to get acquainted with `keras` variables. While `keras` placeholders are a way to instantiate tensors, they are placeholder tensors for users to substitute values into to carry out their intended computation. To be able to use the automatic differentiation in `keras`, we need to define variables, with respect to which we can differentiate other symbols.
-
-TODO: fix variable's behavior according to TensorFlow
+For this, we need to get acquainted with `keras` variables. While `keras` placeholders are a way to instantiate tensors, they are placeholder tensors for users to substitute values into to carry out their intended computation.
+Variables are tensors that have initial values.
 
 ```python
+# we redefine the input_1 and input_2 tensors
+input_1 = K.placeholder(shape=(2, 2))
+input_2 = K.placeholder(shape=(2, 2))
+
 # variable can be initialized with a value like this
 init_variable_1 = np.zeros(shape=(2, 2))
 variable_1 = K.variable(value=init_variable_1)
@@ -437,42 +440,44 @@ variable_1 = K.variable(value=init_variable_1)
 # variable can also be initialized with particular functions like this
 variable_2 = K.ones(shape=(2, 2))
 
-add_tensor = variable_1 + variable_2
+add_tensor = input_1*variable_1+input_2*variable_2
 
-print(variable_1)
-print(add_tensor)
+print("Variable 1:", variable_1)  # note that it doesn't print the value contained
+print("Added tensors together:", add_tensor)
 
 # notice the difference in the types, one is a variable tensor
 # while the other is just a tensor
 
 # we can evaluate the value of variables like this
-K.eval(variable_1)
-K.eval(variable_2)
+print("Values in variable 1:", K.eval(variable_1))
+print("Values in variable 2:", K.eval(variable_2))
 
 # we can create the add function from the add_tensor just like before
 
-add_function = K.function(inputs=(variable_1, variable_2),
+add_function = K.function(inputs=[input_1, input_2],
                           outputs=(add_tensor,))
 
-add_function((np.array([[1, 3], [2, 4]]),
-              np.array([[3, 2], [5, 6]])))
-
+print(add_function((np.array([[1, 3], [2, 4]]),
+                    np.array([[3, 2], [5, 6]]))))
 # notice that the add_function created is independent of the variables
 # the value of variables created is not affected
 
-K.eval(variable_1)
-K.eval(variable_2)
+print("Variable 1:", K.eval(variable_1))
+print("Variable 2:", K.eval(variable_2))
 
 # we can set the value of variables like this
 K.set_value(x=variable_1, value=np.array([[1, 3], [2, 4]]))
 
-K.eval(variable_1)
+print("Variable 1 after change:", K.eval(variable_1))
 
-# notice that the change in variable_1 is reflected when you evaluate
-# add_tensor now
+# notice that the change in variable_1 is reflected when you call add_function again
 
-K.eval(add_tensor)
+print(add_function((np.array([[1, 3], [2, 4]]),
+                    np.array([[3, 2], [5, 6]]))))
 ```
+
+__Remarks__: As defined in the `function` API, the input tensors have to be a list of placeholders. TensorFlow's Keras strictly follows this definition. However, the original Keras does not care if the input tensors are placeholders or variable. This is a bug of current TensorFlow since `function` could run without warning even variables are passed as input. See [here](https://github.com/tensorflow/tensorflow/issues/25764).
+
 
 We can also compute more than one thing at the same time by using multiple outputs. Say we want to add two tensors, subtract two tensors, perform an element-wise squaring operation on one of the tensors and get the element-wise exponential of the other tensor.
 
@@ -530,6 +535,9 @@ grad_functions((np.array([[1, 3], [2, 4]]),
 ```
 
 __Remarks__: The complete API reference is available at [Keras documentation for backend](https://keras.io/backend/).
+
+In this session, we learned basic ideas in symbolic computation.
+Some of you may heard that another popular library [PyTorch](https://pytorch.org/) is even easier to use than TensorFlow. PyTorch uses a framework called _dynamic computation graph_ which can generate the graph on the fly. This means that it is closer to our old programming paradigm. However, to think the computing differently, in this module we keep using the _static_ computation graph.
 
 ### Exercises
 

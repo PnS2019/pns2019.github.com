@@ -34,7 +34,8 @@ The grayscale and the RGB encodings are only two types of image color-spaces. Th
 
 ---
 
-The above picture is one of the most famous testing images - __Lenna__ (or Lena). The resolution of the image is $$512\times 512$$.  The image has both simple and complex textures, a wide range of colors, nice mixture of detail, shading which do a great job of testing various of image processing algorithms. Lenna is truly goddess of digital image processing. If you would like to read more story of Lenna, please follow [this link](http://www.lenna.org/).
+The above picture is one of the most famous testing images - __Lenna__ (or Lena). The resolution of the image is $$512\times 512$$.  The image has both simple and complex textures, a wide range of colors, nice mixture of detail, shading which do a great job of testing various of image processing algorithms. Lenna is truly goddess of digital image processing. If you would like to read more story of Lenna, please follow [this link](http://www.lenna.org/). A more recent post by WIRED can be
+found at [here](https://www.wired.com/story/finding-lena-the-patron-saint-of-jpegs/).
 
 Given a grayscale or RGB image, we can naturally treat the image as the same as a matrix or a 3D tensor. We can then process images with our knowledge of Linear Algebra.
 

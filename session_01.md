@@ -4,13 +4,13 @@ layout: default
 
 Welcome to the first session of the module --- _Deep Learning on Raspberry Pi_.
 
-In this session, we will revisit the basic concepts of Linear Algebra. Then, we will familiarize ourselves with `numpy`, a Python package used for scientific computing and some basics of symbolic computation. At the end of this session, there will be a few exercises which will further help the understanding of the concepts introduced here.
+In this session, we will revisit the basic concepts of Linear Algebra. Then, we will familiarize ourselves with `numpy`, a Python package used for scientific computing and some basics of symbolic computation. At the end of this session, there will be a few exercises which will further help to understand the concepts introduced here.
 
 ## Linear Algebra
 
-This section will only provide a brief introduction to Linear Algebra. For those of you who are unfamiliar with the concepts of Linear Algebra, it is strongly recommended that you spend some time with a text book or a complete course on Linear Algebra. A strongly recommended text book is [Introduction to Linear Algebra](math.mit.edu/~gs/linearalgebra/) by Gilbert Strang.
+This section will only provide a brief introduction to Linear Algebra. For those of you who are unfamiliar with the concepts of Linear Algebra, it is strongly recommended that you spend some time with a text book or complete a course on Linear Algebra. A strongly recommended text book is [Introduction to Linear Algebra](math.mit.edu/~gs/linearalgebra/) by Gilbert Strang.
 
-__Remarks__: In this module, we do not emphasize the geometry aspects of the Linear Algebra. Instead, we use the relevant concepts in the view of programing and computation.
+__Remarks__: In this module, we do not emphasize the geometry aspects of the Linear Algebra. Instead, we use the relevant concepts for programing and computation.
 
 ### Scalar, Vector, Matrix and Tensor
 
@@ -94,7 +94,7 @@ The __identity matrix__ $$\mathbf{I}\in\mathbb{R}^{n\times n}$$ is a special squ
 
 $$\mathbf{I}_{i,i} = 1, \mathbf{I}_{i,j_{i\neq j}}=0$$
 
-The identity matrix has a nice properties that it does not change the matrix when we multiply that matrix by identity matrix:
+The identity matrix has the nice property that it does not change a matrix that it is multiplied with:
 
 $$\mathbf{I}\mathbf{A}=\mathbf{A}$$
 
@@ -128,7 +128,7 @@ $$
 
 The __trace operator__ gives the sum of all the diagonal entries of a matrix:
 
-$$\text{Tr}(\mathbf{A})=\sum_{i}\mathbf{A}_{i,i})$$
+$$\text{Tr}(\mathbf{A})=\sum_{i}\mathbf{A}_{i,i}$$
 
 There are many useful yet not obvious properties given by the trace operator. For example, for $$\mathbf{A}\in\mathbb{R}^{m\times n}$$ and $$\mathbf{B}\in\mathbb{R}^{n\times m}$$, we have:
 
@@ -323,13 +323,13 @@ for element in np.transpose(a, axes=[1, 0, 2]):
   print(element)
 ```
 
-`numpy` broadcasts arrays of different shapes during arithmetic operations. Broadcasting allows functions to deal with inputs that do not have the same shape but expects inputs that have the same shape.
+`numpy` broadcasts arrays of different shapes during arithmetic operations. Broadcasting allows functions to deal with inputs that do not have the same shape but expect inputs that have the same shape.
 
 The first rule of broadcasting is that if all the input arrays do not have the same dimensions, a '1' will be **prepended** to the shapes of the smaller arrays until all the arrays have the same number of dimensions.
 
-The second rule ensures that arrays with size '1' along a particular dimension acts as if they had size of the largest array in that dimension, with the value repeated in that dimension.
+The second rule ensures that arrays with size '1' along a particular dimension act as if they had the size of the largest array in that dimension, with the value repeated in that dimension.
 
-After these two rules, the arrays must be of same shape, otherwise the arrays are not broadcastable. Further details can be found [here](https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html).
+After these two rules, the arrays must be of the same shape, otherwise the arrays are not broadcastable. Further details can be found [here](https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html).
 
 [![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1wXg_2NK4ErPzsOykHtjXjmgNfb3vEeAa)
 
@@ -355,13 +355,13 @@ __Remarks__: For a more complete Python `numpy` Tutorial, please check [this doc
 While classical computing (numerical computing) defines variables and uses operations to modify their values, symbolic computation defines a graph of operations on symbols, which can be substituted for values later.
 These operations can include addition, subtraction, multiplication, matrix multiplication, differentiation, exponentiation, etc.
 
-Every operation takes as input symbols (tensors), and output symbols that can be further operated upon.
+Every operation takes as input symbols (tensors), and outputs symbols that can be further operated upon.
 
-In this module, we will use [TensorFlow](https://www.tensorflow.org/), a dedicated machine learning framework based on symbolic computation. Specifically, we use the official high-level APIs -- Keras.
+In this module, we will use [TensorFlow](https://www.tensorflow.org/), a dedicated machine learning framework based on symbolic computation. Specifically, we use the official high-level API -- Keras.
 
-__Remarks__: [Keras](https://keras.io/) is an open source project that was dedicated to provide clean yet efficient high-level APIs that unifies several different frameworks. Keras has become the official high-level abstraction layer of TensorFlow and has deeply fused into recent TensorFlow releases. Therefore, for this module, we choose to use the Keras in the TensorFlow to get better support in performance.
+__Remarks__: [Keras](https://keras.io/) is an open source project that was dedicated to providing a clean yet efficient high-level API that unifies several different frameworks. Keras has become the official high-level abstraction layer of TensorFlow and has been deeply fused into recent TensorFlow releases. Therefore, for this module, we choose to use Keras in TensorFlow to get better support and performance.
 
-__Remarks__: Almost all modern Deep Learning libraries follows the principle of symbolic computation including Theano, TensorFlow, PyTorch, MXNET, Chainer, etc.
+__Remarks__: Almost all modern Deep Learning libraries follows the principles of symbolic computation including Theano, TensorFlow, PyTorch, MXNET, Chainer, etc.
 
 First let us import the backend functions of Keras in python and implement some basic operations.
 
@@ -423,7 +423,7 @@ The above code represents a _computation graph_ which takes two inputs and gives
 ---
 
 Computation graph is the essential concept of symbolic computation where the tensors in this case define the steps of the computation and the graph compilation (achieved by `K.function` API) turns the graph into a __function__. Note that before compiling, the elements in the graph are merely symbols. The main advantage of using symbolic computation is _automatic differentiation_ which can be directly derived from a graph. Almost all training algorithms in
-deep learning relay on this powerful technique.
+deep learning rely on this powerful technique.
 
 For this, we need to get acquainted with `keras` variables. While `keras` placeholders are a way to instantiate tensors, they are placeholder tensors for users to substitute values into to carry out their intended computation.
 Variables are tensors that have initial values.
@@ -476,7 +476,7 @@ print(add_function((np.array([[1, 3], [2, 4]]),
                     np.array([[3, 2], [5, 6]]))))
 ```
 
-__Remarks__: As defined in the `function` API, the input tensors have to be a list of placeholders. TensorFlow's Keras strictly follows this definition. However, the original Keras does not care if the input tensors are placeholders or variable. This is a bug of current TensorFlow since `function` could run without warning even variables are passed as input. See [here](https://github.com/tensorflow/tensorflow/issues/25764).
+__Remarks__: As defined in the `function` API, the input tensors have to be a list of placeholders. TensorFlow's Keras strictly follows this definition. However, the original Keras does not care if the input tensors are placeholders or variables. This is a bug of current TensorFlow since `function` could run without warning when variables are passed as input. See [here](https://github.com/tensorflow/tensorflow/issues/25764).
 
 
 We can also compute more than one thing at the same time by using multiple outputs. Say we want to add two tensors, subtract two tensors, perform an element-wise squaring operation on one of the tensors and get the element-wise exponential of the other tensor.
@@ -543,7 +543,7 @@ grad_functions((np.array([[1, 3], [2, 4]]),
 __Remarks__: The complete API reference is available at [Keras documentation for backend](https://keras.io/backend/).
 
 In this session, we learned basic ideas in symbolic computation.
-Some of you may heard that another popular library [PyTorch](https://pytorch.org/) is even easier to use than TensorFlow. PyTorch uses a framework called _dynamic computation graph_ which can generate the graph on the fly. This means that it is closer to our old programming paradigm. However, to think the computing differently, in this module we keep using the _static_ computation graph.
+Some of you may have heard that another popular library [PyTorch](https://pytorch.org/) is even easier to use than TensorFlow. PyTorch uses a framework called _dynamic computation graph_ which can generate the graph on the fly. This means that it is closer to our old programming paradigm. However, to think the computing differently, in this module we keep using the _static_ computation graph.
 
 ### Exercises
 

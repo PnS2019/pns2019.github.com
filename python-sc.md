@@ -71,7 +71,7 @@ Python 3.6
 
 __Remark__: Python 3.6 has gained full support from the scientific community. Python 2.7 was the default choice of the module. However, as Python 2's support will be ended soon, we choose Python 3.5/3.6 as the default Python version for this edition.
 
-__Remark__: Do not use Python 3.7 for now as many softwares haven't supported for this version yet.
+__Remark__: Do not use Python 3.7 for now as many softwares don't have support for this version yet.
 
 ## How to Install Other Python Packages?
 
@@ -129,10 +129,10 @@ They even walk you through the steps so that you are comfortable with
 this kind of coding style.
 
 However, we are strongly against this paradigm of coding.
-It is true that the Jupyter Notebook offered a nice presentation style.
+It is true that the Jupyter Notebook offers a nice presentation style.
 But it is not designed for managing and engineering serious projects.
 
-Therefore, we advice that you do not use Jupyter Notebook.
+Therefore, we advise that you do not use Jupyter Notebook.
 
 ### What do you need from an IDE?
 
@@ -157,7 +157,7 @@ If you are a [Eclipse](http://www.eclipse.org/) user, perhaps you would be happy
 
 ### Vim
 
-For the experienced user, we recommend [Vim](https://www.vim.org/) or its community-driven fork [neovim](https://neovim.io/). By configuring Vim, you will be able to get a fast editor that has all the IDE features you want and being lightweight in some sense. Additionally, because Vim is a very flexible editor, you could do many things very efficient while other editors won't or can't do.
+For the experienced user, we recommend [Vim](https://www.vim.org/) or its community-driven fork [neovim](https://neovim.io/). By configuring Vim, you will be able to get a fast editor that has all the IDE features you want while being lightweight in some sense. Additionally, Vim is a very flexible editor which allows you to efficiently do more things compared to other editors.
 
 ## Further Readings
 

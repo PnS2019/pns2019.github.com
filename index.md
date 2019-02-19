@@ -59,13 +59,13 @@ Advanced techniques of Computer Vision such as filtering, corner detection, keyp
 + __Are You Human?__: Break a CAPTCHA that uses simple math as the question. (Difficulty: 6)
 
 + __Which station is this?__: Take a picture of the station name, recognize the
-station and find the position from Google Map! (Difficulty: 7)
+station and find the position from Google Maps! (Difficulty: 7)
 
 + __Implementing backpropagation__: Implement the backpropagation method in basic python without relying on any high level APIs like Keras or Tensorflow. (Difficulty: 7)
 
 + __(Advanced) Paper Piano__: Print the piano key on a paper, use CV techniques to identify which key is pressed and play the sound. (Difficulty: 8)
 
-+ __(Advanced) Raspberry that talks__: Analysis an image via image captioning, then broadcast the information to a speaker. (Difficulty: 8)
++ __(Advanced) Raspberry that talks__: Analyse an image via image captioning, then broadcast the information to a speaker. (Difficulty: 8)
 
 + __(Advanced) Object Tracking__: Develop a model-free object tracker for [VOT Challenge](http://www.votchallenge.net/vot2017/index.html)! (Difficulty: 9)
 

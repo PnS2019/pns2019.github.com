@@ -4,7 +4,7 @@ layout: default
 
 In this session, we are going to learn two types of __Artificial Neural Networks__ (ANNs): Multi-layer Perceptron (MLP) and Convolutional Neural Networks (ConvNets). These ANN architectures are also __Feedforward Networks__ (FNNs). We will show how they works and the links between them. In addition, we will also learn _regularization_ techniques that improve generalization during training.
 
-## Deep Learning: Another Victim of the CS Naming Logic
+## Deep Learning: Another Victim of the CS Naming Fashion
 
 __Deep Learning__ (DL) is a terrible name. First of all, there is no concrete definition of the term "deep". In the influential review article _Deep Learning in Neural Networks: An Overview_, Schmidhuber says:
 
@@ -26,6 +26,8 @@ Programming" in a recent [Facebook post](https://www.facebook.com/yann.lecun/pos
 We have to remember that DL consists of many useful and powerful tools. However, DL alone is not AI, or Machine Learning.
 
 __Remark__: To be exact, differentiable models are the largest family of DL models. However, there are DL models that are not differentiable and do not use SGD to optimize (e.g., some Reinforcement Learning algorithms).
+
+__Remark__: Readers may wonder if _Machine Learning_ is an equally bad name. I would argue differently, for the reasons that ML was founded on the basis of determining quality of a predictor and in that case, more humble about its claims. 
 
 ## Artificial Neuron
 

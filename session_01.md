@@ -532,9 +532,9 @@ grad_3_tensor = K.gradients(loss=exp_tensors_added,
 
 # we can now create functions corresponding to these operations
 grad_functions = K.function(inputs=(input_1, input_2),
-                             outputs=(grad_1_tensor[0],
-                                      grad_3_tensor[0],
-                                      grad_3_tensor[1]))
+                            outputs=(grad_1_tensor[0],
+                                     grad_3_tensor[0],
+                                     grad_3_tensor[1]))
 
 grad_functions((np.array([[1, 3], [2, 4]]),
                 np.array([[3, 2], [5, 6]])))

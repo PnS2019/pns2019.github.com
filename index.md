@@ -8,6 +8,7 @@ This module instructs students on the basics of deep learning as well as buildin
 + __Language of Instruction__: English
 + __Prerequisites__ Basic programming (e.g. Python, C++), Basics in Linear Algebra
 + __TA__: Yuhuang Hu, Iulia-Alexandra Lungu
++ __Contacts__: yuhuang.hu@ini.uzh.ch, iulialexandra@ini.uzh.ch
 
 ---
 <div>

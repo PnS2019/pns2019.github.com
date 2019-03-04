@@ -39,11 +39,11 @@ a Python distribution that is built for Scientific Computing.
 1. Open a terminal and download Miniconda
 
     ```bash
-    $ wget https://repo.anaconda.com/miniconda/Miniconda3-4.5.12-Linux-x86_64.sh -O miniconda.sh  # for Linux
+    $ wget https://repo.anaconda.com/miniconda/Miniconda3-4.5.4-Linux-x86_64.sh -O miniconda.sh  # for Linux
     ```
 
     ```bash
-    $ curl https://repo.anaconda.com/miniconda/Miniconda3-4.5.12-MacOSX-x86_64.sh -o miniconda.sh  # for macOS
+    $ curl https://repo.anaconda.com/miniconda/Miniconda3-4.5.4-MacOSX-x86_64.sh -o miniconda.sh  # for macOS
     ```
 
 2. Install Miniconda

@@ -385,7 +385,7 @@ Now we can instantiate an add function from the symbols created above.
 
 ```python
 add_function = K.function(inputs=[input_1, input_2],
-                          outputs=(inputs_added,))
+                          outputs=[inputs_added])
 print(add_function)
 ```
 
@@ -404,8 +404,8 @@ input_2 = K.placeholder(shape=(2, 2))
 
 inputs_added = input_1 + input_2
 
-add_function = K.function(inputs=(input_1, input_2),
-                          outputs=(inputs_added,))
+add_function = K.function(inputs=[input_1, input_2],
+                          outputs=[inputs_added])
 
 add_function((np.array([[1, 3], [2, 4]]),
               np.array([[3, 2], [5, 6]])))
@@ -455,7 +455,7 @@ print("Values in variable 2:", K.eval(variable_2))
 # we can create the add function from the add_tensor just like before
 
 add_function = K.function(inputs=[input_1, input_2],
-                          outputs=(add_tensor,))
+                          outputs=[add_tensor])
 
 print(add_function((np.array([[1, 3], [2, 4]]),
                     np.array([[3, 2], [5, 6]]))))
@@ -492,10 +492,10 @@ square_1_tensor = input_1 ** 2
 exp_2_tensor = K.exp(input_2)
 
 multiple_output_function = K.function(inputs=(input_1, input_2),
-                                      outputs=(add_tensor,
+                                      outputs=[add_tensor,
                                                subtract_tensor,
                                                square_1_tensor,
-                                               exp_2_tensor))
+                                               exp_2_tensor])
 
 multiple_output_function((np.array([[1, 3], [2, 4]]),
                           np.array([[3, 2], [5, 6]])))
@@ -531,10 +531,10 @@ grad_3_tensor = K.gradients(loss=exp_tensors_added,
                                        variable_2])
 
 # we can now create functions corresponding to these operations
-grad_functions = K.function(inputs=(input_1, input_2),
-                            outputs=(grad_1_tensor[0],
+grad_functions = K.function(inputs=[input_1, input_2],
+                            outputs=[grad_1_tensor[0],
                                      grad_3_tensor[0],
-                                     grad_3_tensor[1]))
+                                     grad_3_tensor[1]])
 
 grad_functions((np.array([[1, 3], [2, 4]]),
                 np.array([[3, 2], [5, 6]])))

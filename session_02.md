@@ -189,7 +189,7 @@ $$
 J(\theta) = -\frac{1}{N}\sum_{i=1}^{N}\left(y^{(i)} \log(\Pr(y=1|\mathbf{x}^{(i)}))+(1-y^{(i)})\log(\Pr(y=0|\mathbf{x}^{(i)}))\right)
 $$
 
-Intuitively, when the model makes a correct decision (suppose the true label is 1), then the $$\Pr(y=1|\mathbf{x})$$ is also high, this generates a lower cost when the model makes a wrong decision and the $$\Pr(y=1|\mathbf{x})$$ is low. From the information theoretic point of view, the _cross-entropy_ between a "true" distribution $$p$$ and an estimated distribution $$q$$ measures the "similarity" between two distributions. Ideally, when the number of samples $$N\rightarrow\infty$$
+Intuitively, when the model makes a correct decision (suppose the true label is 1), then the $$\Pr(y=1|\mathbf{x})$$ is also high, this generates a lower cost than when the model makes a wrong decision and the $$\Pr(y=1|\mathbf{x})$$ is low. From the information theoretic point of view, the _cross-entropy_ between a "true" distribution $$p$$ and an estimated distribution $$q$$ measures the "similarity" between two distributions. Ideally, when the number of samples $$N\rightarrow\infty$$
 and cost function $$J(\theta)=0$$, we cannot distinguish the estimation distribution from the "true" distribution.
 
 Our learning algorithm is expected to find a best set of parameters that minimizes the cost function $$J(\theta)$$:

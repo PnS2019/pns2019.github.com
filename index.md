@@ -76,7 +76,7 @@ station and find the position from Google Maps! (Difficulty: 7)
 
 __Remark__: Difficulty scale: 1 (so easy) -- 10 (way too hard)
 
-__Remark__: First-come-First-serve basis in selecting project. Up to two groups selecting the same project.
+__Remark__: First-come-First-serve basis in selecting project.
 
 ## Timeline
 

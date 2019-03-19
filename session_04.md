@@ -2,7 +2,7 @@
 layout: default
 ---
 
-In this session, we focus on introducing basic concepts and techniques in __Digital Image Processing__ and __Computer Vision__. We also would like to discuss how you can apply these techniques to Machine Learning tasks. Note that we omit many mathematical details that are out of the scope of the session.
+In this session, we focus on introducing basic concepts and techniques in __Digital Image Processing__ and __Computer Vision__. We would also like to discuss how you can apply these techniques to Machine Learning tasks. Note that we omit many mathematical details that are out of the scope of the session.
 
 ## Digital Image Representation
 
@@ -21,7 +21,7 @@ With the above definition, we can define an image as a $$n\times m\times k$$ (`h
 
 A pixel is a point $$(x,y)$$ in an image. Typically, the intensity of a pixel is denoted as one or an array of `uint8` values. `uint8` is unsigned 8-bit integer that has the range $$[0, 255]$$ (0 is no color, 255 is full color). If there is only one color channel
 ($$k=1$$), the image is typically stored as a _grayscale_ image. The intensity of a pixel is then represented by one `uint8` value where 0 is black and 255 is white. If there are three color channels ($$k=3$$), we define that the first, the second and the third channel are the <font color="red">red</font> channel, the <font color="green">green</font> channel and the <font color="blue">blue</font> channel respectively. We hence refer this type of image to as _RGB_
-color image. The intensity of a pixel in a RGB image is represented by three `uint8` integers where these three integers express the mixture of the three base colors - red, green and blue. You can interpret the value of a certain channel as the degree of the color intensity. Because each pixel has three `uint8` values, each RGB pixel can represent $$2^{24}$$ different colors.
+color image. The intensity of a pixel in an RGB image is represented by three `uint8` integers where these three integers express the mixture of the three base colors - red, green and blue. You can interpret the value of a certain channel as the degree of the color intensity. Because each pixel has three `uint8` values, each RGB pixel can represent $$2^{24}$$ different colors.
 
 The grayscale and the RGB encodings are only two types of image color-spaces. There are other image color-spaces such as YCrCb, HSV, HLS that are widely applied in many other applications. We do not discuss these color-spaces here.
 
@@ -34,10 +34,10 @@ The grayscale and the RGB encodings are only two types of image color-spaces. Th
 
 ---
 
-The above picture is one of the most famous testing images - __Lenna__ (or Lena). The resolution of the image is $$512\times 512$$.  The image has both simple and complex textures, a wide range of colors, nice mixture of detail, shading which do a great job of testing various of image processing algorithms. Lenna is truly goddess of digital image processing. If you would like to read more story of Lenna, please follow [this link](http://www.lenna.org/). A more recent post by WIRED can be
-found at [here](https://www.wired.com/story/finding-lena-the-patron-saint-of-jpegs/).
+The above picture is one of the most famous testing images - __Lenna__ (or Lena). The resolution of the image is $$512\times 512$$.  The image has both simple and complex textures, a wide range of colors, nice mixture of detail, shading, all of which are very useful when testing various image processing algorithms. Lenna is truly a goddess of digital image processing. If you would like to read more about the story of Lenna, please follow [this link](http://www.lenna.org/). A more recent post by WIRED can be
+found [here](https://www.wired.com/story/finding-lena-the-patron-saint-of-jpegs/).
 
-Given a grayscale or RGB image, we can naturally treat the image as the same as a matrix or a 3D tensor. We can then process images with our knowledge of Linear Algebra.
+Given a grayscale or RGB image, we can naturally treat the image as a matrix or a 3D tensor. We can then process images using our knowledge of Linear Algebra.
 
 ## Image Geometric Transformation
 
@@ -47,7 +47,7 @@ OpenCV is an optimized Computer Vision library that supports
 multiple programming languages. The library implements many
 classical and modern Image Processing and Computer Vision
 related algorithms very efficiently. In this module, we use
-the Python bindings of the OpenCV. If you have installed the OpenCV,
+the Python bindings of the OpenCV. If you have installed OpenCV,
 you can import the package in your program as follows:
 
 ```python
@@ -67,9 +67,9 @@ import skimage
 
 [![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/130dqzJgSGFdtdNZ_9fR__AiGhs7uBHvK)
 
-Scaling (resizing) an image concerns with the topic of up-sampling and down-sampling.
+Scaling (resizing) an image is related to up-sampling and down-sampling.
 For example, the Max-Pooling operation we introduced in Session 3 is
-a way of scaling an image. In this section, we shell use the OpenCV's API
+a way of scaling an image. In this section, we shall use OpenCV's API
 to rescale an image.
 
 ```python
@@ -96,10 +96,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-Yo can find the detailed documentation of the `cv2.resize` from [here](https://docs.opencv.org/2.4/modules/imgproc/doc/geometric_transformations.html#resize)
+Yo can find the detailed documentation of the `cv2.resize` [here](https://docs.opencv.org/2.4/modules/imgproc/doc/geometric_transformations.html#resize)
 
-Note that OpenCV reverse the color channel order while encoding an RGB image.
-OpenCV refers this encoding to as BGR. OpenCV uses the BGR as the default color space.
+Note that OpenCV reverses the color channel order while encoding an RGB image.
+OpenCV refers to this encoding as BGR. OpenCV uses the BGR as the default color space.
 However, if you would like to process and plot the RGB image
 using other libraries, you will need to
 convert the channel ordering via the `cvtColor` API:
@@ -134,7 +134,7 @@ plt.imshow(res)
 plt.show()
 ```
 
-Check out the detailed documentation at [here](http://scikit-image.org/docs/dev/api/skimage.transform.html).
+Check out the detailed documentation [here](http://scikit-image.org/docs/dev/api/skimage.transform.html).
 
 ### Translation
 
@@ -208,7 +208,7 @@ plt.show()
 
 [![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1roCGZEaH4T2N98UCWNcPfuADLX582RnZ)
 
-Rotation of an image for an angle $$\theta$$ in OpenCV is achieved by
+Rotation of an image by an angle $$\theta$$ in OpenCV is achieved by
 defining a rotation matrix that has the form of
 
 $$
@@ -219,7 +219,7 @@ M = \left[\begin{matrix}
 $$
 
 You can compute this matrix in OpenCV via the `getRotationMatix2D` API.
-The following example rotates the image for $$45^{\circ}$$ in counter-clockwise direction.
+The following example rotates the image for $$45^{\circ}$$ in a counter-clockwise direction.
 
 ```python
 import cv2
@@ -238,7 +238,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-In `skimage`, one can perform this operation via `rotate` API:
+In `skimage`, one can perform this operation via the `rotate` API:
 
 ```python
 from skimage.io import imread
@@ -262,10 +262,10 @@ plt.show()
 
 [![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1msFjrjSaUmzNG43mTROwbngC4sRu0lws)
 
-Affine transformation is a linear mapping method that preserves
+An a ffine transformation is a linear mapping method that preserves
 points, straight lines and planes.
-In affine transformation, all parallel lines in the original image will still
-beg parallel in the output image.
+In an affine transformation, all parallel lines in the original image will still
+be parallel in the output image.
 
 In the following example, we select three points from the original image
 (in this case, $$x_{1}=(50, 50)$$, $$x_{2}=(200, 50)$$, $$x_{3}=(50, 200)$$).
@@ -351,8 +351,7 @@ If you apply a global threshold to the entire image,
 it may not be good in all the conditions because different regions of the image
 have different lighting conditions. In this case,
 we can consider adaptive thresholding methods.
-For example, we first calculate the threshold for a small regions of the image.
-And then use the calculated value on local region to threshold pixels.
+For example, we first calculate the threshold for a small region of the image and then use the calculated value on local regions to threshold pixels.
 
 ```python
 import cv2
@@ -391,7 +390,7 @@ for i in xrange(4):
 plt.show()
 ```
 
-A `skimage` implementation of global thresholding and adaptive thresholding
+An `skimage` implementation of global thresholding and adaptive thresholding
 is:
 
 ```python
@@ -428,13 +427,12 @@ plt.show()
 
 [![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1YSAIeyvisZXIp91qUGvGHjgCWoOVtvLg)
 
-In last session, we discussed how a filter in ConvNet can be used to produce
-feature map. The process of applying a filter is _convolution_.
+In the last session, we discussed how a filter in ConvNet can be used to produce
+feature maps. The process of applying a filter is the _convolution_.
 This is also at the core of implementing static convolution filters.
-You can in principal design a filter that is sensitive to certain spatial patten.
-In result, you can obtain the interesting signal.
+You can in principle design a filter that is sensitive to a certain spatial pattern in order to obtain an interesting signal.
 
-Here we demonstrate how can you use an average filter to blur an image.
+Here we demonstrate how you can use an average filter to blur an image.
 
 The average filter that has $$M\times N$$ elements is defined as follows:
 
@@ -483,8 +481,8 @@ But this can be achieved by using other numerical packages such as
 ### Gradients, again
 
 In some cases, spatial changes on the image may be attractive to know.
-For example, if someone want to find the shape of an object in the image,
-we usually assume that the region round the edge of the object will change dramatically. With this spatial change, we can then define the spatial gradient.
+For example, if someone wants to find the shape of an object in the image,
+we usually assume that the region around the edge of the object will change dramatically. With this spatial change, we can then define the spatial gradient.
 
 Here we demonstrate two kinds of gradient filters: Laplacian filters and
 Sobel filters. Here we demonstrate some common settings of these two filters
@@ -586,9 +584,9 @@ plt.show()
 
 The above section on gradients provides a set of simple edge
 detectors (e.g., horizontal or vertical edges). However, the quality
-of the filtered edges is heavily depending on the design of the filter.
+of the filtered edges is heavily dependent on the design of the filter.
 A popular edge detection algorithm is _Canny edge detector_ which
-is developed by John F. Canny in 1986. This algorithm has multiple
+was developed by John F. Canny in 1986. This algorithm has multiple
 stages that can denoise the image, find the gradients, and apply thresholding.
 We omit the details of this algorithm here. Interested readers
 can follow [this link](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_canny/py_canny.html#canny) for more information.
@@ -636,21 +634,20 @@ plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
 plt.show()
 ```
 
-__Remark__: We encourage readers to read the book _Computer Vision: Algorithms and Applications_ by Richard Szeliski. This book presents nicely a wide range of Computer Vision algorithms.
+__Remark__: We encourage readers to read the book _Computer Vision: Algorithms and Applications_ by Richard Szeliski. This book presents a wide range of Computer Vision algorithms.
 
 ## Image Augmentation in Keras
 
-Image Augmentation is a form of regularization that reduces generalization error of image recognition system by creating "fake images" (Goodfellow et al.,
-2016). By applying various kinds of data transformations (e.g., standardization, geometric transformations such as rotating, scaling, stretching), the virtual size of the dataset increases. The exposure of more varieties of the original
-image particularly improves the network robustness against geometric trans-
-formations and view points in training DNNs.
+Image Augmentation is a form of regularization that reduces generalization error of image recognition systems by creating "fake images" (Goodfellow et al.,
+2016). By applying various kinds of data transformations (e.g., standardization, geometric transformations such as rotating, scaling, stretching), the virtual size of the dataset increases. The exposure to more varieties of the original
+image particularly improves the network robustness against geometric transformations and view points in training DNNs.
 
 ### Standardization
 
-Standardization is one of the common dataset preprocessing procedures in Machine Learning. The use of standardization is to stabilize the dataset by subtracting the feature-wise mean and diving feature-wise standard deviation. Note that this procedure does not affect the overall distribution of the data and it is merely a data shifting and rescaling operation. The employment of standardization gives DNNs the advantage in which they are freed from learning the high variance
+Standardization is one of the common dataset preprocessing procedures in Machine Learning. The purpose of standardization is to stabilize the dataset by subtracting the feature-wise mean and dividing feature-wise by the standard deviation. Note that this procedure does not affect the overall distribution of the data and it is merely a data shifting and rescaling operation. Thanks to standardization, DNNs do not have to learn the high variance
 property and the mean of the data.
 
-To be specific, let the image dataset be $$\mathcal{X}=\{\mathbf{x}_{i}\}_{i=1}^{N}$$ where the dataset contains $$N$$ samples, the mean of the dataset $$\bar{\mathbf{x}}$$ and updated zero-mean dataset $$\hat{\mathcal{X}}$$ can be computed as follows:
+To be specific, let the image dataset be $$\mathcal{X}=\{\mathbf{x}_{i}\}_{i=1}^{N}$$ where the dataset contains $$N$$ samples. The mean of the dataset $$\bar{\mathbf{x}}$$ and updated zero-mean dataset $$\hat{\mathcal{X}}$$ can be computed as follows:
 
 $$
 \begin{aligned}
@@ -670,12 +667,12 @@ $$
 
 where $$\odot$$ and / are element-wise multiplication and division.
 
-In practice, the feature wise mean $$\bar{\mathbf{x}}$$ and standard deviation $$\sigma$$ are usually precomputed from the training dataset and saved. Because the training dataset and the testing dataset are typically assumed that they follow the same distribution, $$\bar{\mathbf{x}}$$ and $$\sigma$$ are reused to standardize the testing dataset  for saving computing resources (especially the size of the testing dataset is much larger than training dataset). In some cases
-where computing standard deviation is not feasible for a large dataset, then only mean subtraction is applied.
+In practice, the feature wise mean $$\bar{\mathbf{x}}$$ and standard deviation $$\sigma$$ are usually precomputed from the training dataset and saved. Because the training dataset and the testing dataset are typically assumed that they follow the same distribution, $$\bar{\mathbf{x}}$$ and $$\sigma$$ are reused to standardize the testing dataset  for saving computing resources (especially when the size of the testing dataset is much larger than that of the training dataset). In some cases
+where computing standard deviation is not feasible for a large dataset, only mean subtraction is applied.
 
 ### Random Flipping and Shifting
 
-Random Flipping and Shifting are two popular image augmentation that are employed to create more varieties of an image particularly in the context of object recognition. The use of these two procedures increases the network's robustness against mirror image, rotation, and translation.
+Random Flipping and Shifting are two popular image augmentation techniques that are employed to create more varieties of an image, particularly in the context of object recognition. The use of these two procedures increases the network's robustness against mirror image, rotation, and translation.
 
 ---
 
@@ -687,7 +684,7 @@ Random Flipping and Shifting are two popular image augmentation that are employe
 
 ---
 
-__Random Flipping__ is usually applied on each image during the training. The image can be translated into one of the four forms presented in the above left image randomly and independently. Note that for certain applications, one of vertical flipping or horizontal flipping might be disabled, e.g., for object segmentation in autonomous driving, it does not make sense to apply vertical flipping.
+__Random Flipping__ is usually applied on each image during training. The image can be translated into one of the four forms presented in the above left image randomly and independently. Note that for certain applications, one of vertical flipping or horizontal flipping might be disabled, e.g., for object segmentation in autonomous driving, it does not make sense to apply vertical flipping.
 
 __Random Shifting__ randomly shifts the image for some predefined distance along one of the 9 directions: left ($$\leftarrow$$), right ($$\rightarrow$$), up ($$\uparrow$$), down ($$\downarrow$$), up-left ($$\nwarrow$$), up-right ($$\nearrow$$), down-left ($$\swarrow$$), down-right ($$\searrow$$), and still ($$\cdot$$) in the training phase (the above image at the right). This predefined distance is usually quantified in pixels.
 
@@ -745,7 +742,7 @@ model.fit_generator(datagen.flow(x_train, y_train, batch_size=32),
                     steps_per_epoch=len(x_train) / 32, epochs=epochs)
 ```
 
-Noted that this generator is implemented on CPU instead of GPU. Therefore, it takes a long time for preprocessing a huge dataset if you are not careful.
+Note that this generator is implemented on CPU instead of GPU. Therefore, it takes a long time to preprocess a huge dataset if you are not careful.
 
 ## Exercises
 

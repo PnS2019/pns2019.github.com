@@ -82,9 +82,9 @@ __Remark__: First-come-First-serve basis in selecting project.
 
 + Week 5 (March 28th): Project Briefing
 
-+ Week 6 (April 11th): Assign project based on the team's decision. Assign team name based on the team's decision. Setup project, first group discussion on the plan to complete the project.
++ Week 6 (April 4th): Assign project based on the team's decision. Assign team name based on the team's decision. Setup project, first group discussion on the plan to complete the project.
 
-+ Week 7-9 (April 18th - May 2rd): Collecting data, writing utility functions, first prototype by end of the 9th week
++ Week 7-9 (April 11th - May 2rd): Collecting data, writing utility functions, first prototype by end of the 9th week. __No class on April 25th__
 
 + Week 10-11 (May 9th, May 16th): Refine the model and implementation so that the system can run as fast as possible
 

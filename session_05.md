@@ -524,7 +524,7 @@ questions.
 In the last five sessions, we learned how to use Keras for symbolic computation
 and for solving Machine Learning problems. We also learned how to use
 OpenCV, `numpy`, `scikit-image` to process image data.
-You might be overwhelmed by how much software there is to solve
+You might be overwhelmed by how many softwares there are to solve
 some particular problem. You probably wonder if this is enough for
 dealing with practical issues in future projects.
 

@@ -114,7 +114,7 @@ that has the resolution higher than `250x250`. Usually, we will
 rescale and subsample them so that we would not have to process
 every detail of the picture. We also suggest that for your projects,
 you can cut the unnecessary parts, rescale the image or select only
-the regions of interests.
+the regions of interest.
 
 ## Feature Engineering
 
@@ -138,8 +138,7 @@ in the database. This alternative solution would boost the performance
 greatly since you could identify the person with these selected features,
 and these features are designed to be robust in different environments.
 
-Note that in recent years, conventional Feature Engineering is
-largely replaced by Deep Learning systems where these systems
+Note that in recent years, conventional Feature Engineering has largely been replaced by Deep Learning systems where these systems
 integrate the Feature Engineering step into the architecture itself.
 Instead of relying on carefully designed features, the features learned
 by these DL systems are proven to be more robust to
@@ -153,15 +152,15 @@ Computer Vision tasks.
 
 [![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1FGs27KCZbh4h2zB9LWMwRGvTrCgLn0mR)
 
-Corner Detection is one of the classical procedure of Computer Vision
-preprocessing due to the reason that the corners represent
+Corner Detection is one of the classical procedures of Computer Vision
+preprocessing due to the reason that corners represent
 a large variation in intensity in many directions.
 And this can be very attractive in our above photo matching example.
 If we can find the near identical corner features from two
 different photos, we can roughly say that they share similar content
 in the pictures (of course, in reality, this is not enough).
 
-We give a OpenCV example as follows.
+We give an OpenCV example as follows.
 
 ```python
 import cv2
@@ -198,35 +197,34 @@ you can get optimal results.
 
 [![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1p7McfxQdXSD32KO3jPFigejiiTQjKivp)
 
-The corner detection is easy to implement and useful if you have
+Corner detection is easy to implement and useful if you have
 a picture that has a static resolution. And it is obvious that
 this process is _rotation invariant_. However, when you scale the
-image via interpolation or simply taking a picture in a closer distance,
-this result of the method may change dramatically because
+image via interpolation or simply by taking a picture at a closer distance,
+the result may change dramatically because
 the corner in the original image may become flat in the new image.
 
 A solution to find _scale invariant_ features in an image is SIFT (scale-invariant
 feature transform). This algorithm is proposed by D. Lowe in a seminal paper
 _Distinctive Image Features from Scale-Invariant Keypoints_.
 We encourage that everyone should read this paper so that you can
-get a better understanding. We are not going to present the details of the algorithm here because the material is out of the scope.
+get a better understanding. We are not going to present the details of the algorithm here because the material is out of the scope of this module. 
 
 SIFT is a strong method for extracting features because the keypoints
 are generally robust against different rotations, scales and even
 lighting conditions (within a reasonable range). We can then use
-these keypoints as the landmarks so that we can suddenly do
-feature matching, image stitching, gesture recognition, video tracking
-easily.
+these keypoints as the landmarks so that we can easily do
+feature matching, image stitching, gesture recognition and video tracking.
 
 Once the keypoints are identified, we can then compute the _descriptor_ -
 a vector that describes the surrounding region of the keypoint.
 First, we take a `16x16` neighborhood around the keypoint. Second,
 this `16x16` region is divided into 16 sub-blocks of `4x4` size. Third, For each
-sub-block, 8-bin orientation histogram is created. So a total of `16x8=128`
+sub-block, an 8-bin orientation histogram is created. So a total of `16x8=128`
 bin values are available. This 128-values vector is then the descriptor of
 the keypoint.
 
-A OpenCV example is as follows:
+An OpenCV example is as follows:
 
 ```python
 import cv2
@@ -249,8 +247,8 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-SURF (Speed-Up Robust Features) is a speed-up version of SIFT.
-In the OpenCV, you can use the similar API for SURF.
+SURF (Speed-Up Robust Features) is a sped-up version of SIFT.
+In OpenCV, you can use the similar API for SURF.
 SURF is good at handling images with blurring and rotation,
 but not good at handling viewpoint change and illumination change.
 
@@ -330,17 +328,17 @@ download [this script](./res/code/opencv_feature_matching.py).
 This script demonstrates how to localize the Lenna image in the above
 example. The idea is that by using these keypoints, one can
 calculate a perspective transformation by using `findHomography` API.
-The script is adapted from the [OpenCV tutorial](https://docs.opencv.org/3.4.1/d1/de0/tutorial_py_feature_homography.html). Note that you might need to modify
+The script is adapted from the [OpenCV tutorial](https://docs.opencv.org/3.4.1/d1/de0/tutorial_py_feature_homography.html). Note that you might need to modify it
 if you are running this on the Raspberry Pi.
 
 ## Face Detection
 
 [![CoLab](https://img.shields.io/badge/Reproduce%20in-CoLab-yellow.svg?style=flat-square)](https://colab.research.google.com/drive/1CmZwkzrkap3nvPvUbuYy3NBZPe5jYZls)
 
-In this section, we would like to show how you can detect a human
+In this section, we would like to show you how to detect a human
 face with OpenCV. This is achieved by using _Haar Feature-based
-cascade Classifiers_. The idea is straightforward, by giving many
-positive and negative samples, we can use pre-select filters
+cascade Classifiers_. The idea is straightforward: by giving many
+positive and negative samples, we can use pre-selected filters
 to build a classifier that only accepts the regions that contain
 specific feature patterns. We will not further elaborate the algorithm;
 interested readers can read the original paper _Rapid Object Detection
@@ -403,7 +401,7 @@ cv2.destroyAllWindows()
 ```
 
 OpenCV has many pre-trained Haar Cascades classifiers for body
-parts. Turns out they are very efficient in detecting regions of interests.
+parts. Turns out they are very efficient in detecting regions of interest.
 Because this method only uses simple features, these classifiers
 would fail if the training condition is not met. For example, if you
 rotate your head and show only one side of the face, this classifier
@@ -442,7 +440,7 @@ You will be working on your projects from the next session on. Working on a
 deep learning project involves lots of data, experiments and analyzing the
 results. So, it is imperative that you maintain a good structure in your project
 folder so you can handle your work in a smooth fashion. Here are a few tips
-that will help you in this regard. Note that, the points mentioned below are
+that will help you in this regard. Note that the points mentioned below are
 just helpful guidelines, and you free to use it, tweak it or follow a
 completely different folder structure as per your convenience.
 
@@ -461,7 +459,7 @@ So your folder structure should take care of these requirements.
 #### Folder structure
 Initialize a github project on the PnS2019 github repository, and clone it to your working machine. The folder structure can be organized as follows.
 
-1. __README__ file: A README file with some basic information about the project, like the required dependencies, setting up the project and replicating an experiment, links to the dataset, is really useful both for you and anyone you are sharing your project with.
+1. __README__ file: A README file with some basic information about the project, like the required dependencies, setting up the project and replicating an experiment, links to the dataset. This is really useful both for you and anyone you are sharing your project with.
 2. __data__ folder: A data folder to host the data is useful if it is kept separate. Given that some of your projects involve data collection, your data generation scripts can also be hosted in this directory.
 3. __models__ folder: You can put your model implementations in this folder.
 4. __main.py__ file: The main file is the main training script for the project. Ideally you would want to run this script with some parameters of choice to train a required model.
@@ -488,30 +486,30 @@ to the network through some preprocessing techniques. One of the most commonly
 used preprocessing techniques are standardizing your data to a zero mean and one
 variance distribution and using a dimensionality reduction to reduce your input
 dimensionality.
-3. __Optimizing your learning rule__. You can optimize your learning rule, the
-popular learning rule used currently is the 'Adam' learning rule, but more
+3. __Optimizing your learning rule__. The
+most popular learning rule used nowadays is the 'Adam' learning rule, but more
 recent works suggest that the use of stochastic gradient descent with learning
 rate schedulers is rising. But keep track of the recent literature for
-experiments regarding optimal learning rule. Also keep in mind that there is no
+experiments regarding optimal learning rules. Also keep in mind that there is no
 single learning rule for every task.
 4. __Avoid overfitting and underfitting__. Make sure your model is not overfitting and
-underfitting. If you model is overfitting, either add more data or decrease the number of
-parameters in your model or use regularizing techniques. If you model is underfitting,
-increase the number of parameters in your model, and look for different architectures to better
+underfitting. If your model is overfitting, either add more data or decrease the number of
+parameters in your model or use regularizing techniques. If your model is underfitting,
+increase the number of parameters in your model, and look for different architectures to improve
 the performance.
 5. __Weight initialization__. Weight initialization makes a huge difference to your model's
-training performance and the final accuracy, especially for the deeper models. So keep in mind
-that look for experiments in the literature about optimal weight initializations.
+training performance and the final accuracy, especially for the deeper models. So keep that in mind
+and look for experiments in the literature about optimal weight initializations.
 6. __Batch size and epochs__. Ideally you would want to use the whole dataset as your batch size.
 But computing and memory constraints usually limit you from doing so. Perform a hyper parameter
-search for the optimal batch size to tune it. Another hyper parameter to optimize is the number of
+search for the optimal batch size. Another hyper parameter to optimize is the number of
 epochs to train on. Training for more and more epochs usually leads to overfitting especially if
 your model is over the required capacity. You can use a technique called early stopping where the
 training is stopped when you observe that the validation performance is not getting better with
 increasing number of epochs.
 7. __Ensemble techniques__. Another commonly used technique to improve the performance on a
 particular task is using multiple models each trained separately and then using the combined
-prediction of these models enhances the overall performance on your task. But keep in mind that
+prediction of these models to enhance the overall performance on your task. But keep in mind that
 usually the marginal gain in performance is too low for the use of extra computation and memory.
 But nevertheless, this is a technique that could prove useful in case you are looking to optimize
 the performance.
@@ -524,20 +522,20 @@ questions.
 ## Closing Remarks
 
 In the last five sessions, we learned how to use Keras for symbolic computation
-and solving Machine Learning problems. We also learned how to use
+and for solving Machine Learning problems. We also learned how to use
 OpenCV, `numpy`, `scikit-image` to process image data.
-You might be overwhelmed by how many software there are to solve
-some particular problems. You probably wonder if this is enough for
+You might be overwhelmed by how much software there is to solve
+some particular problem. You probably wonder if this is enough for
 dealing with practical issues in future projects.
 
-The answer is a hard NO. Keras is might be the best way of prototyping
+The answer is a hard NO. Keras might be the best way of prototyping
 new ideas. However, it is not the best software to scale,
 it is not the fastest ML software on the market, and researchers from
-different domains have different flavors of choosing and using a software.
+different domains have different preferences in choosing and using a software.
 In [this page](./dl-res.html), we listed some other influential
-software that are currently being employed in academia and industry.
+software that is currently being employed in academia and industry.
 
 Arguably, the best way of learning a programming language/library is
 to do a project. In the following weeks, you will need to
 choose a project that uses the knowledge you learned in the past
-five weeks. Furthermore, everything has to be fit into a Raspberry Pi.
+five weeks. Furthermore, everything has to be working on a Raspberry Pi.

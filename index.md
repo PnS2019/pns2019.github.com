@@ -4,7 +4,7 @@ layout: default
 
 This module instructs students on the basics of deep learning as well as building better and faster deep network classifiers for sensor data. The module is strongly project-based, with two main phases. In the first phase, students will learn the basics of deep learning and Computer Vision, e.g. stochastic gradient descent, multi-layer perceptron, convolutional neural networks, filtering, and corner detection. At the end of this first phase, students should be ready to run simple networks in TensorFlow and implement basic computer vision methods in Python. In the second phase, students will be divided into teams of 2 or 3. Each team will tackle a problem of their choosing, from fields such as computer vision, pattern recognition, distributed computing. Example projects include face recognition and emotion recognition.
 
-+ __Instructor__: PD. Dr. Shih-Chii Liu
++ __Instructor__: Prof. Shih-Chii Liu
 + __Language of Instruction__: English
 + __Prerequisites__ Basic programming (e.g. Python, C++), Basics in Linear Algebra
 + __TA__: Yuhuang Hu, Iulia-Alexandra Lungu

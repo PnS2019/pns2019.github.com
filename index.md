@@ -86,9 +86,11 @@ __Remark__: First-come-First-serve basis in selecting project.
 
 + Week 7-9 (April 11th - May 2rd): Collecting data, writing utility functions, first prototype by end of the 9th week. __No class on April 25th__
 
-+ Week 10-11 (May 9th, May 16th): Refine the model and implementation so that the system can run as fast as possible
++ Week 10 (May 9th, May 16th): Refine the model and implementation so that the system can run as fast as possible
 
-+ Week 12-13 (May 23th, May 30th): Project write up and presentation
++ Week 11 (May 16th): Project presentation
+
++ Week 12-13 (May 23th, May 30th): Project write up
 
 # Acknowledgment
 

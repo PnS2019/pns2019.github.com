@@ -91,7 +91,7 @@ Generally, with Miniconda, we have three ways of installing other Python package
     $ conda install some-package-name
     ```
 
-3. Use `setup.py`. A decent Python library usually has a `setup.py` script. With this script, you can install the package via
+3. Use `setup.py`. A decent [Python library](https://www.scaler.com/topics/python-libraries/) usually has a `setup.py` script. With this script, you can install the package via
 
     ```bash
     $ python setup.py install
